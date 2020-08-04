@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
+/* Table of Content 
+    1) Narvbar Comp
+*/
+:root {
+  --themePrimary: #251e26;
+  --themeSecondary: rgb(255, 201, 232);
+}
+a {
+  text-decoration: none;
+}
+/* Narvbar Comp */
+#navbar {
+  background-color: #251e26;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  font-family: "Indie Flower", cursive;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+.menu:hover {
+  background-color: var(--themeSecondary);
+  cursor: pointer;
+  border-radius: 50%;
+}
+#logo {
+  color: var(--themeSecondary);
+  font-size: 2rem;
+  margin-left: 55px;
+}
+
+.search_container {
+  position: absolute;
+  width: 150px;
+  height: 30px;
+  right: 30%;
+  transition: all 0.5s ease-in;
+}
+.searchbar {
+  position: absolute;
+  background-color: transparent;
+  border: white;
+  color: white;
+  outline: 0;
+  width: 80%;
+  left: 30px;
+  height: 100%;
+  padding: 5px;
+}
+.search_container::before {
+  font-family: "fontawesome";
+  position: absolute;
+  content: "\f002";
+  font-size: 25px;
+  background: -webkit-linear-gradient(#f7baed, #382335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 1s ease-in-out;
+  left: 0;
+  z-index: 50;
+}
+
+.search_container::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--themeSecondary);
+  left: 30px;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: 1s ease-in-out;
+  transform-origin: left;
+}
+.search_container:focus-within::after {
+  transform: scaleX(0.95);
+}
+.search_container:focus-within::before {
+  transform: translateX(150px);
+}
+
+.nav_items {
+  position: absolute;
+  right: 2%;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav_item {
+  padding: 20px;
+  font-size: 23px;
+  color: antiquewhite;
+}
+
+@media screen and (max-width: 1080px) {
+  .search_container {
+    right: 320px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nav_items {
+    transform: translateX(-30px);
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  .search_container {
+    transform: translateX(280px);
+  }
+  .search_container::before {
+    transform: translateX(150px);
+  }
+}
+@media screen and (max-width: 420px) {
+  #logo {
+    margin-left: 0px;
+  }
+  .search_container {
+    right: 8%;
+
+    transform: unset;
+  }
+}
