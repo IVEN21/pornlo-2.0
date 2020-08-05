@@ -35,7 +35,8 @@ function Sidebar({ onSide, user, menuClose }) {
   var side_items_2 = [
     { name: "Categories", id: 3 },
     { name: "Upload", id: 4, path: "/upload" },
-    { name: "Premium Free", id: 5, path: "/checkout" },
+    { name: "Live", id: 5, path: "/live" },
+    { name: "Premium Free", id: 6, path: "/checkout" },
   ];
 
   //render items based of window width
@@ -44,15 +45,15 @@ function Sidebar({ onSide, user, menuClose }) {
       ...side_items_1,
       { name: `${user}`, id: 2, path: "/profile" },
       ...side_items_2,
-      { name: "API", id: 6, path: "/API" },
-      { name: "Logout", id: 7, path: "/logout" },
+      { name: "API", id: 7, path: "/API" },
+      { name: "Logout", id: 8, path: "/logout" },
     ];
   else if (width <= 750)
     side_items = [
       ...side_items_1,
       { name: "Login", id: 2, path: "/login" },
       ...side_items_2,
-      { name: "API", id: 6, path: "/API" },
+      { name: "API", id: 7, path: "/API" },
     ];
   else side_items = [...side_items_1, ...side_items_2];
 
@@ -91,7 +92,6 @@ function Sidebar({ onSide, user, menuClose }) {
                 ...props,
                 cursor: "pointer",
                 color: "#b79eba",
-                marginBottom: on_cate ? `${categories.length * 60}px` : "",
               }}
               key={side_items[index].id}
               onClick={() => toggleCate(!on_cate)}

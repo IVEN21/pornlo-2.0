@@ -3,7 +3,6 @@
 *::after {
   box-sizing: border-box;
 }
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 /* Table of Content 
@@ -159,20 +158,11 @@ a {
   position: fixed;
   height: 100%;
   z-index: 50;
-  overflow: scroll;
   padding-top: 70px;
   height: 100%;
   box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
   -webkit-box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
   -moz-box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
-}
-.sidebar::-webkit-scrollbar {
-  width: 2px;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: #e8b3b3;
-  border-radius: 10px;
 }
 
 .side_items {
@@ -183,17 +173,21 @@ a {
   color: var(--themePrimary);
   padding: 15px 20px;
   position: relative;
-  transition: margin 0.5s ease-in-out;
+  transition: margin 2s ease-in-out;
   white-space: nowrap;
+  z-index: 10;
 }
 .side_items.cate_items {
   color: #efdaf2;
+  background-color: var(--themePrimary);
+  border-radius: 30px;
+  margin-bottom: 3px;
 }
 .cate_sort {
   padding-left: 10px;
   font-size: 30px;
   transform: rotateX(-180deg);
-  transition: all 0.1s ease-in;
+  transition: transform 0.1s ease;
 }
 
 .active {
@@ -209,3 +203,4 @@ a {
 .side_items.categories:hover {
   filter: brightness(100%);
 }
+
