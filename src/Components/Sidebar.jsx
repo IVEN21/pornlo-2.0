@@ -57,7 +57,7 @@ function Sidebar({ onSide, user, menuClose }) {
     ];
   else side_items = [...side_items_1, ...side_items_2];
 
-  //animation
+  //items trail animation
   const side_list_animation = useTrail(side_items.length, {
     from: {
       opacity: 0,
@@ -70,7 +70,7 @@ function Sidebar({ onSide, user, menuClose }) {
     },
   });
 
-  //animation render
+  //items render
   const side_list_render = () => {
     return (
       <React.Fragment>
@@ -81,18 +81,13 @@ function Sidebar({ onSide, user, menuClose }) {
               key={side_items[index].id}
               onClick={menuClose}
             >
-              <NavLink to={side_items[index].path} className="side_items">
+              <NavLink to={side_items[index].path} className="side_items items">
                 {side_items[index].name}
               </NavLink>
             </animated.div>
           ) : (
             <animated.div
               className="side_items categories"
-              style={{
-                ...props,
-                cursor: "pointer",
-                color: "#b79eba",
-              }}
               key={side_items[index].id}
               onClick={() => toggleCate(!on_cate)}
             >
@@ -127,6 +122,7 @@ function Sidebar({ onSide, user, menuClose }) {
     { name: "- Long legs", id: 105, path: "/pornlo/长腿" },
   ];
 
+  //categories trail animation
   const categories_animation = useTrail(categories.length, {
     from: {
       transform: "scaleX(0)",
@@ -141,6 +137,7 @@ function Sidebar({ onSide, user, menuClose }) {
     delay: 0,
   });
 
+  //categories render
   const categories_render = (
     <div
       className="cate_container"
@@ -150,7 +147,7 @@ function Sidebar({ onSide, user, menuClose }) {
         <animated.div style={props} key={categories[index].id}>
           <NavLink
             to={categories[index].path}
-            className="side_items cate_items"
+            className="cate_items"
           >
             {categories[index].name}
           </NavLink>
@@ -159,6 +156,7 @@ function Sidebar({ onSide, user, menuClose }) {
     </div>
   );
 
+  //render component
   return (
     <React.Fragment>
       <animated.div style={sidebarAnimation} className="sidebar">

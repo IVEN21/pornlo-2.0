@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Navabr toggleMenu={toggleMenu}/>
       <Sidebar onSide={onSide} menuClose={menuClosed}  />
-      <header className="App-header">lols</header>
+      <header className="App-header"></header>
     </div>
   );
 }
