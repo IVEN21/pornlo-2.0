@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 /* Table of Content 
@@ -115,6 +116,10 @@ a {
   border-bottom: 2px solid antiquewhite;
   color: var(--lightPurple);
 }
+.nav_item:hover {
+  filter: brightness(200%);
+}
+
 @media screen and (max-width: 1080px) {
   .search_container {
     right: 320px;
@@ -162,17 +167,12 @@ a {
   -moz-box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
 }
 .sidebar::-webkit-scrollbar {
-  width: 4px;
+  width: 2px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
   background: #e8b3b3;
   border-radius: 10px;
-}
-
-/* Handle on hover */
-.sidebar::-webkit-scrollbar-thumb:hover {
-  background: #e8b3b3;
 }
 
 .side_items {
@@ -183,41 +183,29 @@ a {
   color: var(--themePrimary);
   padding: 15px 20px;
   position: relative;
-  transition: all 1s ease-in-out;
+  transition: margin 0.5s ease-in-out;
   white-space: nowrap;
 }
-.side_items::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 100%;
-  background-color: var(--lightPurple);
-  right: 0;
-  top: 0;
-  transform: scaleY(0);
-  transition: all 0.3s ease-in-out;
+.side_items.cate_items {
+  color: #efdaf2;
 }
-.side_items:hover::after {
-  transform: scaleY(1);
+.cate_sort {
+  padding-left: 10px;
+  font-size: 30px;
+  transform: rotateX(-180deg);
+  transition: all 0.1s ease-in;
 }
 
-.side_items.active {
-  border-right: 2px solid var(--lightPurple);
+.active {
   color: var(--lightPurple);
 }
 
-.side_items.cate_items {
-  color: var(--themeSecondary);
-  height: unset;
-  padding: unset;
-  padding-left: 20px;
+.side_items.active {
+  border-right: 5px solid var(--lightPurple);
 }
-
-.side_items.categories::after {
-  all: unset;
+.side_items:hover {
+  filter: brightness(200%);
 }
-@media screen and (max-width: 420px) {
-  .sidebar {
-    width: 175px;
-  }
+.side_items.categories:hover {
+  filter: brightness(100%);
 }

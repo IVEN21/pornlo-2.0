@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated, config, useTrail } from "react-spring";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSortUp } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar({ onSide, user, menuClose }) {
   //listen on window width
@@ -88,13 +90,24 @@ function Sidebar({ onSide, user, menuClose }) {
               style={{
                 ...props,
                 cursor: "pointer",
-                color: "antiquewhite",
-                marginBottom: on_cate ? `${categories.length * 48}px` : "",
+                color: "#b79eba",
+                marginBottom: on_cate ? `${categories.length * 60}px` : "",
               }}
               key={side_items[index].id}
-              onClick={() => toggleCate(true)}
+              onClick={() => toggleCate(!on_cate)}
             >
               {side_items[index].name}
+              {
+                <FontAwesomeIcon
+                  icon={faSortUp}
+                  className="cate_sort"
+                  style={
+                    on_cate
+                      ? { transform: " rotateX(-180deg)" }
+                      : { transform: " rotateX(0deg)" }
+                  }
+                />
+              }
               {categories_render}
             </animated.div>
           )
@@ -106,20 +119,26 @@ function Sidebar({ onSide, user, menuClose }) {
   //categories item animation
   const [on_cate, toggleCate] = useState(false);
   const categories = [
-    { name: "Japaness", id: 100, path: "/pornlo/japs" },
-    { name: "Korean", id: 101, path: "/pornlo/korean" },
-    { name: "Chinese", id: 102, path: "/pornlo/chinese" },
-    { name: "Blondy", id: 103, path: "/pornlo/america" },
-    { name: "Big Boobs", id: 104, path: "/pornlo/大奶" },
-    { name: "Long legs", id: 105, path: "/pornlo/长腿" },
-    { name: "Pure", id: 106, path: "/pornlo/清纯" },
+    { name: "- Japaness", id: 100, path: "/pornlo/japs" },
+    { name: "- Korean", id: 101, path: "/pornlo/korean" },
+    { name: "- Chinese", id: 102, path: "/pornlo/chinese" },
+    { name: "- Blondy", id: 103, path: "/pornlo/america" },
+    { name: "- Big Boobs", id: 104, path: "/pornlo/大奶" },
+    { name: "- Long legs", id: 105, path: "/pornlo/长腿" },
+    { name: "- Pure", id: 106, path: "/pornlo/清纯" },
   ];
 
   const categories_animation = useTrail(categories.length, {
-    from: { opacity: 0, marginTop: "-10px" },
+    from: {
+      transform: "scaleY(0)",
+    },
     to: on_cate
-      ? { opacity: 1, marginTop: "15px" }
-      : { opacity: 0, marginTop: "-10px" },
+      ? {
+          transform: "scaleY(1)",
+        }
+      : {
+          transform: "scaleY(0)",
+        },
     delay: 0,
   });
 

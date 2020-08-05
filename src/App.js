@@ -15,8 +15,8 @@ function App() {
   };
   return (
     <div className="App">
-      <Navabr toggleMenu={toggleMenu} />
-      <Sidebar onSide={onSide} menuClose={menuClosed} />
+      <Navabr toggleMenu={toggleMenu} user="iven" />
+      <Sidebar onSide={onSide} menuClose={menuClosed} user="iven" />
       <header className="App-header">lols</header>
     </div>
   );
