@@ -87,9 +87,10 @@ function Sidebar({ onSide, user, menuClose }) {
             </animated.div>
           ) : (
             <animated.div
-              className="side_items categories"
+              className="side_items"
               key={side_items[index].id}
               onClick={() => toggleCate(!on_cate)}
+              
             >
               {side_items[index].name}
               {

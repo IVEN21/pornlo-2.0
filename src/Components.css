@@ -39,7 +39,7 @@ a {
   font-size: 2rem;
 }
 .menu:hover {
-  background-color: var(--themeSecondary);
+  background-color: var(--lightPurple);
   cursor: pointer;
   border-radius: 50%;
 }
@@ -73,7 +73,7 @@ a {
   position: absolute;
   content: "\f002";
   font-size: 25px;
-  background: -webkit-linear-gradient(#f7baed, #382335);
+  background: -webkit-linear-gradient(#faebd7, #f7baed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 1s ease-in-out;
@@ -142,7 +142,7 @@ a {
     margin-left: 0px;
   }
   .search_container {
-    right: 8%;
+    right: 10git a%;
     transform: unset;
   }
 }
@@ -175,6 +175,7 @@ a {
   white-space: nowrap;
   z-index: 10;
   position: relative;
+  cursor: pointer;
 }
 .cate_sort {
   padding-left: 10px;
@@ -195,7 +196,7 @@ a {
   background-color: rgba(255, 201, 232, 0.3);
   padding: 5px 10px;
   border-radius: 20px;
-  z-index: 60;  
+  z-index: 60;
 }
 .active {
   color: var(--lightPurple);
@@ -207,6 +208,9 @@ a {
   filter: brightness(200%);
 }
 
+.cate_items:hover {
+  color: var(--lightPurple);
+}
 @media screen and (max-width: 420px) {
   .side_items {
     height: 55px;
@@ -216,6 +220,5 @@ a {
   }
   .cate_container {
     right: -150px;
-  
   }
 }
