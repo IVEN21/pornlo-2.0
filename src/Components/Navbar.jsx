@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCocktail, faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 import SearchBox from "../Common/SearchBox";
-function Navbar({ user }) {
+function Navbar({ user, toggleMenu }) {
   //LOGO
   const logo = (
     <Link className="navbar-brand" to="/pornlo">
@@ -12,7 +12,7 @@ function Navbar({ user }) {
         <span>Pornlo</span>
         <FontAwesomeIcon
           icon={faCocktail}
-          style={{ fontSize: "30px", color: "pink" }}
+          style={{ fontSize: "30px", color: "rgb(255, 201, 232)" }}
         />
       </div>
     </Link>
@@ -20,7 +20,7 @@ function Navbar({ user }) {
 
   //MENU
   const menu = (
-    <div className="menu">
+    <div className="menu" onClick={toggleMenu}>
       <FontAwesomeIcon icon={faBars} style={{ color: "white" }} />
     </div>
   );

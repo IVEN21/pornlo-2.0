@@ -7,10 +7,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 /* Table of Content 
     1) Narvbar Comp
+    2) Sidebar Comp
 */
 :root {
-  --themePrimary: #251e26;
+  --themePrimary: rgba(119, 96, 143, 0.9);
   --themeSecondary: rgb(255, 201, 232);
+  --lightPurple: #c8c4ff;
 }
 a {
   text-decoration: none;
@@ -51,7 +53,7 @@ a {
   position: absolute;
   width: 150px;
   height: 30px;
-  right: 30%;
+  right: 25%;
   transition: all 0.5s ease-in;
 }
 .searchbar {
@@ -109,7 +111,10 @@ a {
   font-size: 23px;
   color: antiquewhite;
 }
-
+.nav_item.active {
+  border-bottom: 2px solid antiquewhite;
+  color: var(--lightPurple);
+}
 @media screen and (max-width: 1080px) {
   .search_container {
     right: 320px;
@@ -134,7 +139,85 @@ a {
   }
   .search_container {
     right: 8%;
-
     transform: unset;
+  }
+}
+
+/* Sidevbar Comp */
+.sidebar {
+  font-family: "Indie Flower", cursive;
+  background: #555056;
+  background: -webkit-linear-gradient(top left, #555056, #130813);
+  background: -moz-linear-gradient(top left, #555056, #130813);
+  background: linear-gradient(to bottom right, #555056, #130813);
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  z-index: 50;
+  overflow: scroll;
+  padding-top: 70px;
+  height: 100%;
+  box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
+  -webkit-box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
+  -moz-box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
+}
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #e8b3b3;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #e8b3b3;
+}
+
+.side_items {
+  display: block;
+  height: 60px;
+  text-align: left;
+  font-size: 23px;
+  color: var(--themePrimary);
+  padding: 15px 20px;
+  position: relative;
+  transition: all 1s ease-in-out;
+  white-space: nowrap;
+}
+.side_items::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: var(--lightPurple);
+  right: 0;
+  top: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease-in-out;
+}
+.side_items:hover::after {
+  transform: scaleY(1);
+}
+
+.side_items.active {
+  border-right: 2px solid var(--lightPurple);
+  color: var(--lightPurple);
+}
+
+.side_items.cate_items {
+  color: var(--themeSecondary);
+  height: unset;
+  padding: unset;
+  padding-left: 20px;
+}
+
+.side_items.categories::after {
+  all: unset;
+}
+@media screen and (max-width: 420px) {
+  .sidebar {
+    width: 175px;
   }
 }
