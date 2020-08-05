@@ -125,25 +125,27 @@ function Sidebar({ onSide, user, menuClose }) {
     { name: "- Blondy", id: 103, path: "/pornlo/america" },
     { name: "- Big Boobs", id: 104, path: "/pornlo/大奶" },
     { name: "- Long legs", id: 105, path: "/pornlo/长腿" },
-    { name: "- Pure", id: 106, path: "/pornlo/清纯" },
   ];
 
   const categories_animation = useTrail(categories.length, {
     from: {
-      transform: "scaleY(0)",
+      transform: "scaleX(0)",
     },
     to: on_cate
       ? {
-          transform: "scaleY(1)",
+          transform: "scaleX(1)",
         }
       : {
-          transform: "scaleY(0)",
+          transform: "scaleX(0)",
         },
     delay: 0,
   });
 
   const categories_render = (
-    <React.Fragment>
+    <div
+      className="cate_container"
+      style={on_cate ? { pointerEvents: "all" } : { pointerEvents: "none" }}
+    >
       {categories_animation.map((props, index) => (
         <animated.div style={props} key={categories[index].id}>
           <NavLink
@@ -154,7 +156,7 @@ function Sidebar({ onSide, user, menuClose }) {
           </NavLink>
         </animated.div>
       ))}
-    </React.Fragment>
+    </div>
   );
 
   return (
