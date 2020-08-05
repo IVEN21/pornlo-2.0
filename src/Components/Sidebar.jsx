@@ -90,7 +90,7 @@ function Sidebar({ onSide, user, menuClose }) {
               className="side_items"
               key={side_items[index].id}
               onClick={() => toggleCate(!on_cate)}
-              
+              style={{color:"#996aa8"}}
             >
               {side_items[index].name}
               {
