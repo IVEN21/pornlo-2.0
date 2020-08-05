@@ -178,7 +178,15 @@ a {
 }
 .side_items.cate_items {
   color: #efdaf2;
-  margin-bottom: 1px;
+  border: 2px solid pink;
+  border-radius: 30px;
+  margin: 5px;
+  display: inline-block;
+  width: fit-content;
+  background-color: rgba(230, 200, 228, 0.2);
+}
+.side_items.cate_items.active {
+  border: 2px solid white;
 }
 .cate_sort {
   padding-left: 10px;
@@ -188,8 +196,8 @@ a {
 }
 .cate_container {
   position: absolute;
-  right: -80%;
-  top: 0;
+  right: -90%;
+  top: -50px;
 }
 .active {
   color: var(--lightPurple);
@@ -210,6 +218,7 @@ a {
     width: 170px;
   }
   .cate_container {
-    right: -85%;
+    right: -100%;
   }
+  
 }
