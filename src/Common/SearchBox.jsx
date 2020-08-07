@@ -1,5 +1,4 @@
 import React from "react";
-import "../Components.css";
 
 function SearchBox({ onchange }) {
   const clickSearch = (e) => {

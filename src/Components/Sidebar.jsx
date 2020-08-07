@@ -24,7 +24,8 @@ function Sidebar({ onSide, user, menuClose }) {
 
   //sidebar animation
   const sidebarAnimation = useSpring({
-    from: { opacity: 0 },
+    pointerEvents: onSide ? "all" : "none",
+    from: { opacity: 0, pointerEvents: "none" },
     opacity: onSide ? 1 : 0,
     config: config.gentle,
     delay: 100,
@@ -90,7 +91,7 @@ function Sidebar({ onSide, user, menuClose }) {
               className="side_items"
               key={side_items[index].id}
               onClick={() => toggleCate(!on_cate)}
-              style={{color:"#996aa8"}}
+              style={{ ...props, color: "#996aa8" }}
             >
               {side_items[index].name}
               {
@@ -146,10 +147,7 @@ function Sidebar({ onSide, user, menuClose }) {
     >
       {categories_animation.map((props, index) => (
         <animated.div style={props} key={categories[index].id}>
-          <NavLink
-            to={categories[index].path}
-            className="cate_items"
-          >
+          <NavLink to={categories[index].path} className="cate_items">
             {categories[index].name}
           </NavLink>
         </animated.div>

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
+import "./Components.css";
 //components
 import Navabr from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
+import Login from "./Components/Login";
+import Pornlo from "./Components/Pornlo";
 
 function App() {
   //toggle menu
@@ -15,9 +19,16 @@ function App() {
   };
   return (
     <div className="App">
-      <Navabr toggleMenu={toggleMenu}/>
-      <Sidebar onSide={onSide} menuClose={menuClosed}  />
-      <header className="App-header"></header>
+      {/* Universal Components */}
+      <Navabr toggleMenu={toggleMenu} />
+      <Sidebar onSide={onSide} menuClose={menuClosed} />
+
+      {/* Route Components */}
+      <Switch>
+        <Route path="/login" component={Login} />
+        <Route path="/pornlo" component={Pornlo} />
+        <Redirect from="/" to="/pornlo" />
+      </Switch>
     </div>
   );
 }
