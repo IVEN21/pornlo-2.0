@@ -195,17 +195,20 @@ a {
 
 .cate_container {
   position: absolute;
-  right: -80%;
+  transform: translateX(102%);
+  right: 0;
   top: 0;
+  width: fit-content;
+  height: fit-content;
 }
 .cate_items {
-  color: #efdaf2;
+  color: #382a27;
   display: inline-block;
-  margin-bottom: 12px;
-  background-color: rgba(255, 201, 232, 0.3);
+  background-color: #ffc7ba;
   padding: 5px 10px;
   border-radius: 20px;
   z-index: 60;
+  margin-bottom: 15px;
 }
 .active {
   color: var(--lightPurple);
@@ -227,16 +230,172 @@ a {
   .sidebar {
     width: 170px;
   }
-  .cate_container {
-    right: -150px;
+
+  .cate_items {
+    font-size: 25px;
   }
 }
 
 /* Pornlo Comp */
 .pornlo {
+  background: #352d30;
+  background: -webkit-linear-gradient(bottom right, #352d30, #000000);
+  background: -moz-linear-gradient(bottom right, #352d30, #000000);
+  background: linear-gradient(to top left, #352d30, #000000);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 820px;
+  max-height: 100vh;
+}
+.pornlo_grid {
+  margin-top: 50px;
+  width: calc(900px + 30%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  grid-gap: 20px;
+  position: relative;
+  padding: 20px;
+}
+.clip-container {
+  overflow: hidden;
+  height: 280px;
+  position: relative;
+  cursor: grab;
+}
+.clip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.clip::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.2;
+}
+
+.clip:hover::after {
+  opacity: 0;
+}
+
+.cocktail {
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+  font-size: 30px;
+  cursor: grab;
+  z-index: 50;
+}
+
+.clip_info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(42, 30, 44, 0.7);
+  cursor: default;
+  text-align: left;
+}
+.clip_info_bottom {
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 220px;
+}
+.clip_info_bottom span {
+  color: #a88de0;
+}
+
+.clip_attr {
+  border: 2px solid pink;
+  border-radius: 30px;
+  padding: 7px;
+  margin-left: 10px;
+  margin-bottom: 7px;
+  display: inline-block;
+  width: fit-content;
+}
+.clip_link {
+  padding: 5px;
+  position: absolute;
+  right: 2%;
+  bottom: 4%;
+  color: pink;
+  border: 2px solid antiquewhite;
+  border-radius: 30px;
+  font-size: 20px;
+}
+.clip_link:hover {
+  text-decoration: none;
+  color: white;
+}
+.clip_heart {
+  padding: 5px;
+  position: absolute;
+  left: 2%;
+  bottom: 4%;
+  cursor: pointer;
+  font-size: 30px;
+}
+.pagination {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagBtn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(119, 96, 143, 0.2);
+  border-radius: 50%;
+  color: var(--lightPurple);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  padding: 0.5rem 0.5rem;
+  margin-left: 3px;
+}
+.pagBtn.active {
   background-color: var(--themePrimary);
 }
 
+@media screen and (max-width: 1255px) {
+  .pornlo {
+    max-height: unset;
+    min-height: unset;
+    height: 1150px;
+  }
+  .pornlo_grid {
+    width: calc(700px + 30%);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 300px);
+  }
+}
+@media screen and (max-width: 850px) {
+  .pornlo {
+    height: 2130px;
+  }
+  .pornlo_grid {
+    width: 550px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 300px);
+  }
+}
 /* Login Comp */
 .login {
   background-color: aliceblue;
