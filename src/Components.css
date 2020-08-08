@@ -266,8 +266,7 @@ a {
   cursor: grab;
 }
 .loader {
-  position: absolute;
-  padding-top: 15%;
+  padding-top: 300px;
 }
 .clip {
   position: absolute;

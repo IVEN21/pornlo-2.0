@@ -26,7 +26,7 @@ class Pornlo extends Component {
     //render loader
     const loder = () => (
       <div className="loader">
-        <ClimbingBoxLoader color="pink" size="50px" loading={true} />
+        <ClimbingBoxLoader color="pink" size="20px" loading={true} />
       </div>
     );
 
