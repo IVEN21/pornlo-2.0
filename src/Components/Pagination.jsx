@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 const Pagination = ({ count, pageSize, currentPage, onPage }) => {
   if (Math.ceil(count / pageSize) === 1) return null;
   const pages = [];

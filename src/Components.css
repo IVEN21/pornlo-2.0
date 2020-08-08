@@ -244,6 +244,7 @@ a {
   background: linear-gradient(to top left, #352d30, #000000);
   position: relative;
   display: flex;
+  padding-top: 3%;
   justify-content: center;
   min-height: 820px;
   max-height: 100vh;
@@ -263,6 +264,10 @@ a {
   height: 280px;
   position: relative;
   cursor: grab;
+}
+.loader {
+  position: absolute;
+  padding-top: 15%;
 }
 .clip {
   position: absolute;
