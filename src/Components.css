@@ -244,24 +244,23 @@ a {
   background: linear-gradient(to top left, #352d30, #000000);
   position: relative;
   display: flex;
-  padding-top: 3%;
   justify-content: center;
-  min-height: 820px;
+  min-height: 840px;
   max-height: 100vh;
 }
 .pornlo_grid {
-  margin-top: 50px;
-  width: calc(900px + 30%);
+  margin-top: calc(50px + 3%);
+  width: calc(500px + 50%);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 280px);
+  grid-template-rows: repeat(2, calc(270px));
   grid-gap: 20px;
   position: relative;
   padding: 20px;
 }
 .clip-container {
   overflow: hidden;
-  height: 280px;
+  height: calc(270px);
   position: relative;
   cursor: grab;
 }
@@ -383,9 +382,9 @@ a {
     height: 1150px;
   }
   .pornlo_grid {
-    width: calc(700px + 30%);
+    width: calc(600px + 30%);
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 300px);
+    grid-template-rows: repeat(3, 270px);
   }
 }
 @media screen and (max-width: 850px) {
@@ -396,6 +395,14 @@ a {
     width: 550px;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 300px);
+  }
+}
+@media screen and (max-width: 420px) {
+  .pornlo_grid {
+    position: absolute;
+    width: 100%;
+    padding: unset;
+    margin-top: unset;
   }
 }
 /* Login Comp */

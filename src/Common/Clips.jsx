@@ -82,8 +82,8 @@ function Clips({ clip }) {
       <div className="clip-container">
         {window.innerWidth < 650 && (
           <Waypoint
-            bottomOffset="40%"
-            topOffset="10%"
+          bottomOffset="53%"
+            topOffset="3%"
             onEnter={() => clip_toggle(true)}
             onLeave={() => clip_toggle(false)}
           />
@@ -107,7 +107,6 @@ function Clips({ clip }) {
         {heart_render()}
         {info_render()}
       </div>
-      
     </React.Fragment>
   );
 }
