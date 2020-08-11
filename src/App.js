@@ -7,6 +7,7 @@ import Navabr from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Login from "./Components/Login";
 import Pornlo from "./Components/Pornlo";
+import Premium from "./Components/Premium";
 
 function App() {
   //toggle menu
@@ -27,6 +28,7 @@ function App() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
+        <Route path="/checkout" component={Premium} />
         <Redirect from="/" to="/pornlo" />
       </Switch>
     </div>
