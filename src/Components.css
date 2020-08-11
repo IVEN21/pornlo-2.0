@@ -529,11 +529,12 @@ button.focus {
   height: fit-content;
   top: 25vw;
   right: 100px;
-  z-index: 100;
+  z-index: 150;
   text-align: right;
   color: #b85479;
 }
 .pre_list span {
+  
   white-space: nowrap;
   display: block;
   font-size: calc(1vw + 10px);
@@ -542,7 +543,7 @@ button.focus {
 .pre_list span::after {
   font-weight: 100;
   font-family: "fontawesome";
-  color: #99e8ad;
+  color: lightgreen;
   content: "\f05d";
   font-size: larger;
   padding-left: 5px;
@@ -557,6 +558,7 @@ button.focus {
   display: flex;
   align-items: center;
   margin: 100px 0;
+  overflow: hidden;
 }
 .pre_mid_img {
   width: 27vw;
@@ -571,7 +573,7 @@ button.focus {
   background-color: rgba(248, 243, 239, 1);
   transform: translateX(-10%);
   text-align: left;
-  padding: 5% 7% 5% 7%;
+  padding: 5% 7% 5% 14%;
 }
 
 .pre_mid_right h3 {
@@ -581,7 +583,7 @@ button.focus {
 }
 .pre_mid_right p {
   font-size: calc(1vw + 10px);
-  line-height: 140%;
+  line-height: 180%;
 }
 .pre_mid_right p:last-child {
   font-size: calc(1vw + 1px);
@@ -626,7 +628,8 @@ button.focus {
 .sale_box button {
   background-color: azure;
   border: 1px solid #a4ebd0;
-  width: 120px;
+  width: 135px;
+  white-space: nowrap;
   height: 40px;
   font-size: 15px;
   color: #9898fa;
@@ -667,7 +670,7 @@ button.focus {
     background: -webkit-linear-gradient(#b1b2f2, #e887d6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(40px);
+    font-size: calc(35px);
   }
   .pre_top_right p {
     font-size: calc(1vw + 10px);
@@ -681,7 +684,7 @@ button.focus {
     margin: 40px;
   }
   .pre_list {
-    color: white;
+  
     position: absolute;
     width: fit-content;
     height: fit-content;
@@ -722,7 +725,6 @@ button.focus {
   }
 }
 @media screen and (max-width: 420px) {
-
   .pre_mid {
     height: fit-content;
     width: 100%;
@@ -730,7 +732,7 @@ button.focus {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin: 100px 0;
+    margin: 100px 7px;
   }
   .pre_mid_img {
     width: 150px;
@@ -745,11 +747,11 @@ button.focus {
     background-color: rgba(248, 243, 239, 1);
     transform: translateX(-10%);
     text-align: left;
-    padding: 5% 4% 5% 10%;
+    padding: 5% 4% 5% 15%;
   }
   .pre_mid_right h3 {
     font-weight: 300;
-    font-size: calc(2vw + 10px);
+    font-size: calc(2vw + 9px);
     white-space: nowrap;
   }
   .pre_mid_right p {
