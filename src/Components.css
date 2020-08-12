@@ -558,7 +558,7 @@ button.focus {
   display: flex;
   align-items: center;
   margin: 100px 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .pre_mid_img {
   width: 27vw;
@@ -732,7 +732,7 @@ button.focus {
     justify-content: center;
     display: flex;
     align-items: center;
-    margin: 100px 7px;
+    margin: 100px 0px;
   }
   .pre_mid_img {
     width: 150px;

@@ -7,6 +7,7 @@ import Pagination from "../Components/Pagination";
 class Pornlo extends Component {
   state = { currentPage: 1, pageSize: 6, porns: [] };
 
+
   //update current page
   onPage = (page) => {
     this.setState({ currentPage: page });
@@ -15,6 +16,7 @@ class Pornlo extends Component {
   //update data
   async componentDidMount() {
     this.setState({ porns: await getPorns() });
+    window.scrollTo(0, 0);
   }
 
   render() {

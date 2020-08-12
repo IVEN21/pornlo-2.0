@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTrail, animated, useSpring, config } from "react-spring";
 import { Waypoint } from "react-waypoint";
 //top component
@@ -61,6 +61,9 @@ function footerComp() {
 
 //Component
 function Premium(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [img, setImg] = useState(false);
   const { x } = useSpring({
     x: img ? 0 : 100,
@@ -117,10 +120,14 @@ function Premium(props) {
         <animated.div
           style={{
             transform: x.interpolate((x) => `translate3d(${x * -1}%,0,0)`),
-            zIndex: 100,
+            zIndex: 20,
           }}
         >
-          <img src={require("../images/chu.jpg")} className="pre_mid_img" />
+          <img
+            src={require("../images/chu.jpg")}
+            className="pre_mid_img"
+            alt=""
+          />
         </animated.div>
         <animated.div
           style={{
