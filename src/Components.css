@@ -963,15 +963,9 @@ input[type="file"] {
     background-color: transparent;
   }
   .upload_comp_submit {
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    background-color: rgba(255, 201, 232, 0.8);
-    position: absolute;
-    right: 50px;
-    bottom: 15px;
-    cursor: grab;
-    transition: all ease-in 250ms;
+    right: 45px;
+    bottom: 12px;
+   
   }
 }
 
