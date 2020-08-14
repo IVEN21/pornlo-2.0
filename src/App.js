@@ -27,11 +27,11 @@ function App() {
 
       {/* Route Components */}
       <Switch>
+        <Route path="/live" component={Live} />
+        <Route path="/upload" component={Upload} />
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
         <Route path="/checkout" component={Premium} />
-        <Route path="/live" component={Live} />
-        <Route path="/upload" component={Upload} />
         <Redirect from="/" to="/pornlo" />
       </Switch>
     </div>

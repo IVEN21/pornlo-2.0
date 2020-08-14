@@ -843,7 +843,7 @@ button.focus {
   display: flex;
 }
 
-/* images upload */
+/* image upload */
 input[type="file"] {
   display: none;
 }
@@ -958,7 +958,33 @@ input[type="file"] {
     grid-template-rows: repeat(6, 400px);
   }
 }
-
+@media screen and (max-width: 420px) {
+  .upload {
+  }
+  .upload_grid_area {
+    width: 100%;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 380px);
+    margin: 50px 0;
+  }
+  .up_grid {
+    width: 100%;
+  }
+  .up_grid label {
+    background-color: transparent;
+  }
+  .upload_comp_submit {
+    background-color: transparent;
+  }
+  .upload_comp_submit {
+    background-color: transparent;
+  }
+  .upload_comp_submit:hover {
+    background-color: transparent;
+  }
+}
 /* Live Comp */
 .comp.live {
   display: flex;

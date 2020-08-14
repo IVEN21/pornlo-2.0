@@ -25,7 +25,7 @@ function Live(props) {
     from: {
       marginLeft: "10px",
       color: "pink",
-      fontSize: "100px",
+      fontSize: "calc(2vw + 20px)",
       filter: "drop-shadow(.5rem .5rem 0.2rem grey)",
     },
     to: {

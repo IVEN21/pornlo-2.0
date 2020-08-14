@@ -55,6 +55,7 @@ function UploadBtn({ data_upload, locked }) {
               backgroundColor: "rgba(240, 211, 229, 0.8)",
               transform: "translateY(-20px)",
               boxShadow: " 0rem 0.5rem 1rem antiquewhite",
+              borderRadius: "50%",
             }
           : {}
       }
@@ -65,7 +66,6 @@ function UploadBtn({ data_upload, locked }) {
             style={{
               ...props,
               color: !locked ? "#473932" : "#97e8ac",
-
               transition: "color ease-in 250ms",
             }}
             key={item[index].id}
