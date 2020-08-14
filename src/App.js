@@ -30,8 +30,8 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
         <Route path="/checkout" component={Premium} />
-        <Route path="/upload" component={Upload} />
         <Route path="/live" component={Live} />
+        <Route path="/upload" component={Upload} />
         <Redirect from="/" to="/pornlo" />
       </Switch>
     </div>
