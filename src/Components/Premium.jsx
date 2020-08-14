@@ -52,9 +52,9 @@ function botComp() {
 function footerComp() {
   return (
     <div className="prem_footer">
-      <a href="/">Terms</a>
-      <a href="/">About</a>
-      <a href="/">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
     </div>
   );
 }
@@ -66,7 +66,7 @@ function Premium(props) {
   }, []);
   const [img, setImg] = useState(false);
   const { x } = useSpring({
-    x: img ? 0 : 100,
+    x: img ? 0 : 130,
     config: config.wobbly,
   });
   const topComp = () => {
@@ -105,7 +105,7 @@ function Premium(props) {
   const list_animation = useTrail(list.length, {
     from: {
       opacity: 0,
-      transform: "translate3d(-200px,0,0)",
+      transform: "translate3d(-400px,0,0)",
     },
 
     to: {
@@ -140,7 +140,7 @@ function Premium(props) {
               "I never had been so much pleasure after I found this pornsite. I
               cum myslef everytime two minutes after watching"
             </p>
-            <p>Photo by Chu, Businesses Manager </p>
+            <p>Photo by Chu, Business Manager </p>
           </div>
         </animated.div>
       </div>

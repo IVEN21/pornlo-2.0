@@ -12,6 +12,13 @@
     3) Pornlo  Comp
     4) Login   Comp
     6) Premium Comp
+    7) Upload  Comp {
+      I)   Image upload
+      II)  Attributes upload
+      III) Url upload
+      IV)  All upload
+    }
+    8) Live  Comp
 */
 :root {
   --themePrimary: rgba(119, 96, 143, 0.9);
@@ -32,7 +39,7 @@ a {
 #navbar {
   background-color: #251e26;
   position: fixed;
-  z-index: 200;
+  z-index: 1001;
   width: 100%;
   height: 70px;
   display: flex;
@@ -168,7 +175,7 @@ a {
   width: 200px;
   position: fixed;
   height: 100%;
-  z-index: 50;
+  z-index: 1000;
   padding-top: 70px;
   height: 100%;
   box-shadow: 4px 1px 21px 3px rgba(119, 96, 143, 0.75);
@@ -534,7 +541,6 @@ button.focus {
   color: #b85479;
 }
 .pre_list span {
-  
   white-space: nowrap;
   display: block;
   font-size: calc(1vw + 10px);
@@ -573,7 +579,7 @@ button.focus {
   background-color: rgba(248, 243, 239, 1);
   transform: translateX(-10%);
   text-align: left;
-  padding: 5% 7% 5% 14%;
+  padding: 8% 7% 5% 18%;
 }
 
 .pre_mid_right h3 {
@@ -633,7 +639,6 @@ button.focus {
   height: 40px;
   font-size: 15px;
   color: #9898fa;
-  transition: background-color 0.5s ease-in-out;
 }
 .sale_box button:hover {
   background-color: #a4ebd0;
@@ -684,7 +689,6 @@ button.focus {
     margin: 40px;
   }
   .pre_list {
-  
     position: absolute;
     width: fit-content;
     height: fit-content;
@@ -705,6 +709,7 @@ button.focus {
   }
 }
 .prem_footer {
+  margin-top: 100px;
   width: 100%;
   height: 70px;
   background-color: #fff;
@@ -761,4 +766,206 @@ button.focus {
   .pre_mid_right p:last-child {
     font-size: calc(1vw + 7px);
   }
+}
+
+/* Upload Comp */
+
+.upload {
+  background: #504640;
+  background: -webkit-linear-gradient(top left, #504640, #000000);
+  background: -moz-linear-gradient(top left, #504640, #000000);
+  background: linear-gradient(to bottom right, #504640, #000000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1020px;
+}
+.upload_grid_area {
+  width: fit-content;
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(2, 400px);
+  margin: 50px 0;
+}
+.up_grid {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(240, 211, 229, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.up_grid:hover,
+.up_grid:focus-within {
+  background-color: rgba(240, 211, 229, 0.8);
+  transform: translateY(-20px);
+  box-shadow: 0rem 0.5rem 1rem antiquewhite;
+}
+.upload_comp_submit {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  background-color: rgba(255, 201, 232, 0.8);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: grab;
+  transition: all ease-in 250ms;
+}
+.upload_comp_submit:hover {
+  background-color: #38f295;
+  transform: rotate(15deg);
+}
+.submit_lock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #382335;
+  opacity: 0.2;
+  z-index: 100;
+}
+.submit_edit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+  cursor: pointer;
+}
+.up_grid.upload_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload_lock {
+  display: flex;
+}
+
+/* images upload */
+input[type="file"] {
+  display: none;
+}
+.up_grid label {
+  z-index: 30;
+  font-size: larger;
+  height: fit-content;
+  width: fit-content;
+  padding: 50px;
+  background-color: #ebffed;
+  position: absolute;
+  left: -50px;
+  top: -50px;
+  border-radius: 50%;
+  cursor: grab;
+}
+.up_grid_icon {
+  transform: translate3d(20px, 20px, 0);
+  font-size: 30px;
+  color: #443b45;
+}
+.image_display {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  max-height: 100%;
+  max-width: 100%;
+}
+/* attributes upload */
+.up_grid.attr {
+  padding: 5px 40px;
+  position: relative;
+}
+#attr_input {
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-top: 15px;
+  width: 270px;
+}
+#attr_input:hover {
+  border: 1px solid pink;
+}
+#attr_input:focus-within {
+  outline: 0;
+  border: 2px solid pink;
+}
+.attr_btn {
+  padding: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.attr_btn.add {
+  background-color: rgba(149, 219, 134, 0.5);
+}
+.attr_btn.add:hover {
+  background-color: rgba(149, 219, 134, 1);
+}
+.attr_btn.remove {
+  background-color: rgba(204, 98, 121, 0.5);
+}
+.attr_btn.remove:hover {
+  background-color: rgba(204, 98, 121, 1);
+}
+.attr_btn.disable {
+  pointer-events: none;
+  background-color: grey;
+}
+/* url upload */
+.up_grid.url {
+  padding: 20px 30px;
+  position: relative;
+}
+#url_input:focus-within {
+  outline: 0;
+  border: 2px solid #a88de0;
+}
+#url_input:hover {
+  border: 2px solid #a88de0;
+}
+#url_input {
+  display: block;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin: 50px;
+  width: 250px;
+  height: 50px;
+}
+
+@media screen and (max-width: 1260px) {
+  .upload_grid_area {
+    grid-template-columns: repeat(2, 400px);
+    grid-template-rows: repeat(3, 400px);
+  }
+  .upload {
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 820px) {
+  .upload_grid_area {
+    grid-template-columns: repeat(1, 400px);
+    grid-template-rows: repeat(6, 400px);
+  }
+}
+
+/* Live Comp */
+.comp.live {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+}
+.open_soon {
+  display: flex;
 }

@@ -8,7 +8,8 @@ import Sidebar from "./Components/Sidebar";
 import Login from "./Components/Login";
 import Pornlo from "./Components/Pornlo";
 import Premium from "./Components/Premium";
-
+import Upload from "./Components/Upload";
+import Live from "./Components/Live";
 function App() {
   //toggle menu
   const [onSide, setSide] = useState(false);
@@ -29,6 +30,8 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
         <Route path="/checkout" component={Premium} />
+        <Route path="/upload" component={Upload} />
+        <Route path="/live" component={Live} />
         <Redirect from="/" to="/pornlo" />
       </Switch>
     </div>
