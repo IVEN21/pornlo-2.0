@@ -67,7 +67,13 @@ class Upload extends Component {
   };
 
   render() {
-    console.log(this.state);
+
+    // if (window.innerWidth < 450)
+    //   return (
+    //     <div className="comp notSupported">
+    //       Feature Not Supported in Mobile Web
+    //     </div>
+    //   );
     return (
       <div className="upload comp">
         <ToastContainer />

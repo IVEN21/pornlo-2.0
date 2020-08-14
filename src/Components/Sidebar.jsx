@@ -36,7 +36,7 @@ function Sidebar({ onSide, user, menuClose }) {
   var side_items_2 = [
     { name: "Categories", id: 3 },
     { name: "Upload", id: 4, path: "/upload" },
-    { name: "Live", id: 5, path: "/live" },
+    // { name: "Live", id: 5, path: "/live" },
     { name: "Premium Free", id: 6, path: "/checkout" },
   ];
 

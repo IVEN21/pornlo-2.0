@@ -769,7 +769,14 @@ button.focus {
 }
 
 /* Upload Comp */
-
+.comp.notSupported {
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: var(--lightPurple);
+}
 .upload {
   background: #504640;
   background: -webkit-linear-gradient(top left, #504640, #000000);
@@ -784,13 +791,13 @@ button.focus {
   width: fit-content;
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: repeat(3, 400px);
-  grid-template-rows: repeat(2, 400px);
+  grid-template-columns: repeat(3, 380px);
+  grid-template-rows: repeat(2, 380px);
   margin: 50px 0;
 }
 .up_grid {
-  width: 400px;
-  height: 400px;
+  width: 380px;
+  height: 380px;
   background-color: rgba(240, 211, 229, 0.4);
   transition: all 0.4s ease;
   position: relative;
@@ -803,8 +810,8 @@ button.focus {
   box-shadow: 0rem 0.5rem 1rem antiquewhite;
 }
 .upload_comp_submit {
-  width: fit-content;
-  height: fit-content;
+  width: 75px;
+  height: 40px;
   padding: 10px;
   background-color: rgba(255, 201, 232, 0.8);
   position: absolute;
@@ -945,8 +952,8 @@ input[type="file"] {
 
 @media screen and (max-width: 1260px) {
   .upload_grid_area {
-    grid-template-columns: repeat(2, 400px);
-    grid-template-rows: repeat(3, 400px);
+    grid-template-columns: repeat(2, 380px);
+    grid-template-rows: repeat(3, 380px);
   }
   .upload {
     height: fit-content;
@@ -954,18 +961,12 @@ input[type="file"] {
 }
 @media screen and (max-width: 820px) {
   .upload_grid_area {
-    grid-template-columns: repeat(1, 400px);
-    grid-template-rows: repeat(6, 400px);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 380px);
   }
-}
-@media screen and (max-width: 420px) {
-  .up_grid label {
-    background-color: transparent;
-  }
-  .upload_comp_submit {
-    right: 45px;
-    bottom: 12px;
-   
+  .up_grid {
+    width: 350px;
+    height: 375px;
   }
 }
 

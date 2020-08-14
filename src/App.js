@@ -9,7 +9,7 @@ import Login from "./Components/Login";
 import Pornlo from "./Components/Pornlo";
 import Premium from "./Components/Premium";
 import Upload from "./Components/Upload";
-import Live from "./Components/Live";
+
 function App() {
   //toggle menu
   const [onSide, setSide] = useState(false);
@@ -27,7 +27,6 @@ function App() {
 
       {/* Route Components */}
       <Switch>
-        <Route path="/live" component={Live} />
         <Route path="/upload" component={Upload} />
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
