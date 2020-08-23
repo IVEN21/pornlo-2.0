@@ -36,7 +36,7 @@ function Navbar({ user, toggleMenu }) {
     if (user)
       return (
         <React.Fragment>
-          <NavLink className="nav_item" to="/profile">
+          <NavLink className="nav_item" to={`/profile/${user}`}>
             <FontAwesomeIcon icon={faUser} />
             {user}
           </NavLink>

@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 function UploadImg({ input, img_submit }) {
+  //functional states
   const [lock, setlock] = useState(false);
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [selectedFile, setSelectedFile] = useState();
+
+  //images file display and store
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     previewFile(file);
@@ -37,6 +40,7 @@ function UploadImg({ input, img_submit }) {
       console.log(error);
     }
   };
+
   const style = {
     boxShadow: "unset",
     backgroundColor: "rgba(240, 211, 229, 0.1)",

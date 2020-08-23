@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { getPorns } from "../BackendServices/pornsService";
-import { ClimbingBoxLoader } from "react-spinners";
+import { RingLoader } from "react-spinners";
 import pagination from "../Common/pigination";
 import Clips from "../Common/Clips";
 import Pagination from "../Components/Pagination";
+import { toast, ToastContainer } from "react-toastify";
 class Pornlo extends Component {
-  state = { currentPage: 1, pageSize: 6, porns: [] };
-
+  state = { currentPage: 1, pageSize: 6, porns: [], loading: false };
 
   //update current page
   onPage = (page) => {
@@ -15,8 +15,14 @@ class Pornlo extends Component {
 
   //update data
   async componentDidMount() {
-    this.setState({ porns: await getPorns() });
     window.scrollTo(0, 0);
+    this.setState({ loading: true });
+    try {
+      this.setState({ porns: await getPorns() });
+    } catch (error) {
+      toast.error("server down");
+    }
+    this.setState({ loading: false });
   }
 
   render() {
@@ -28,7 +34,7 @@ class Pornlo extends Component {
     //render loader
     const loder = () => (
       <div className="loader">
-        <ClimbingBoxLoader color="pink" size="20px" loading={true} />
+        <RingLoader color="pink" size="100px" loading={true} />
       </div>
     );
 
@@ -44,7 +50,8 @@ class Pornlo extends Component {
     //render component
     return (
       <div className="pornlo comp">
-        {this.state.porns.length === 0 ? loder() : clipsDisplay()}
+        <ToastContainer />
+        {this.state.loading ? loder() : clipsDisplay()}
         <Pagination
           count={porns.length}
           pageSize={pageSize}

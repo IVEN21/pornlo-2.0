@@ -9,8 +9,23 @@ import Login from "./Components/Login";
 import Pornlo from "./Components/Pornlo";
 import Premium from "./Components/Premium";
 import Upload from "./Components/Upload";
+import API from "./Components/API";
+import Signup from "./Components/Signup";
+import Logout from "./Components/Logout";
+import Profile from "./Components/Profile";
+//auth
+import { getCurrrentUser } from "./BackendServices/authService";
 
 function App() {
+  //auth
+
+  var user = "";
+  try {
+    user = JSON.parse(getCurrrentUser()).name;
+  } catch (error) {
+    console.log("can not get user");
+  }
+
   //toggle menu
   const [onSide, setSide] = useState(false);
   const toggleMenu = () => {
@@ -22,8 +37,8 @@ function App() {
   return (
     <div className="App">
       {/* Universal Components */}
-      <Navabr toggleMenu={toggleMenu} />
-      <Sidebar onSide={onSide} menuClose={menuClosed} />
+      <Navabr toggleMenu={toggleMenu} user={user} />
+      <Sidebar onSide={onSide} menuClose={menuClosed} user={user} />
 
       {/* Route Components */}
       <Switch>
@@ -31,6 +46,13 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
         <Route path="/checkout" component={Premium} />
+        <Route path="/api" component={API} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/logout" component={Logout} />
+        <Route
+          path="/profile/:user"
+          render={(props) => <Profile user={user} {...props} />}
+        />
         <Redirect from="/" to="/pornlo" />
       </Switch>
     </div>

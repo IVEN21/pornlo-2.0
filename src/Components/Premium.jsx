@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTrail, animated, useSpring, config } from "react-spring";
 import { Waypoint } from "react-waypoint";
-//top component
+import { NavLink } from "react-router-dom";
 
 //mid component - client comment
 
@@ -12,7 +12,17 @@ function saleBox(h4, span, h3, p, btn, classname) {
       <span>{span}</span>
       <h3>{h3}</h3>
       <p>{p}</p>
-      <button>{btn}</button>
+      {classname !== "month_time_" ? (
+        <button>{btn}</button>
+      ) : (
+        <NavLink to="/signup">
+          <button
+            style={{ textDecoration: "underline", border: "1px solid pink" }}
+          >
+            {btn}{" "}
+          </button>
+        </NavLink>
+      )}
     </div>
   );
 }
@@ -43,7 +53,7 @@ function botComp() {
         "FREE",
         "-",
         "Create Account",
-        "month_time"
+        "month_time_"
       )}
     </div>
   );
