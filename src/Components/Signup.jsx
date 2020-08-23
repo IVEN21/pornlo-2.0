@@ -3,6 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { login } from "../BackendServices/authService";
 import http from "../BackendServices/http";
 import { RingLoader } from "react-spinners";
+import { apiEndpoint } from "../BackendServices/config.json";
 class Signup extends Component {
   state = {
     Username: "",
@@ -58,7 +59,7 @@ class Signup extends Component {
       return;
     }
     try {
-      const { data } = await http.post("http://localhost:5000/users", {
+      const { data } = await http.post(apiEndpoint + "/users", {
         name: this.state["First Name"],
         username: Username,
         password: Password,
