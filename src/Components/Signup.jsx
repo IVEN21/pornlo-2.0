@@ -59,7 +59,7 @@ class Signup extends Component {
       return;
     }
     try {
-      const { data } = await http.post(apiEndpoint + "/users/login", {
+      const { data } = await http.post(apiEndpoint + "/users", {
         name: this.state["First Name"],
         username: Username,
         password: Password,
