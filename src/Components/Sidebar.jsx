@@ -119,7 +119,7 @@ function Sidebar({ onSide, user, menuClose }) {
     { name: "- Japaness", id: 100, path: "/pornlo/japs" },
     { name: "- Korean", id: 101, path: "/pornlo/korean" },
     { name: "- Chinese", id: 102, path: "/pornlo/chinese" },
-    { name: "- Blondy", id: 103, path: "/pornlo/america" },
+    { name: "- Blondy", id: 103, path: "/pornlo/american" },
     { name: "- Big Boobs", id: 104, path: "/pornlo/大奶" },
     { name: "- Long legs", id: 105, path: "/pornlo/长腿" },
   ];

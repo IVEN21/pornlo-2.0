@@ -211,9 +211,10 @@ a {
   height: fit-content;
 }
 .cate_items {
-  color: #382a27;
+  
+  color: #594249;
   display: inline-block;
-  background-color: #ffc7ba;
+  background-color:#ebd6ff;
   padding: 5px 10px;
   border-radius: 20px;
   z-index: 60;
@@ -230,7 +231,7 @@ a {
 }
 
 .cate_items:hover {
-  color: var(--lightPurple);
+  color: #b289c9;
 }
 @media screen and (max-width: 420px) {
   .side_items {

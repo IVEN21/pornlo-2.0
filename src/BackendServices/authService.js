@@ -5,7 +5,7 @@ const key = "token";
 
 export async function login(username, password) {
   try {
-    const promise = await http.post(apiEndpoint + "/users/login", {
+    const promise = await http.post(apiEndpoint + "/_users/login", {
       username,
       password,
     });
