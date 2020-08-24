@@ -49,7 +49,10 @@ function App() {
           render={(props) => <Upload admin={admin} {...props} />}
         />
         <Route path="/login" component={Login} />
-        <Route path="/pornlo" component={Pornlo} />
+        <Route
+          path="/pornlo"
+          render={(props) => <Pornlo {...props} user={user} />}
+        />
         <Route path="/checkout" component={Premium} />
         <Route path="/api" component={API} />
         <Route path="/signup" component={Signup} />

@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Waypoint } from "react-waypoint";
 
-function Clips({ clip }) {
+function Clips({ clip, user }) {
   const [index, set] = useState(0);
   const [clip_on, clip_toggle] = useState(false);
   const [info_on, info_toggle] = useState(false);
@@ -71,7 +71,17 @@ function Clips({ clip }) {
           </span>
         ))}
       </div>
-      <a href={clip.url} alt="#" className="clip_link">
+      <a
+        href={
+          user
+            ? clip.url
+            : () => {
+                window.location = "/login";
+              }
+        }
+        alt="#"
+        className="clip_link"
+      >
         Link here
         <FontAwesomeIcon icon={faTired} style={{ color: "antiquewhite" }} />
       </a>
@@ -82,7 +92,7 @@ function Clips({ clip }) {
       <div className="clip-container">
         {window.innerWidth < 650 && (
           <Waypoint
-          bottomOffset="53%"
+            bottomOffset="53%"
             topOffset="3%"
             onEnter={() => clip_toggle(true)}
             onLeave={() => clip_toggle(false)}

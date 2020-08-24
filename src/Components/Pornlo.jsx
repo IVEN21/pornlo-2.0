@@ -43,7 +43,7 @@ class Pornlo extends Component {
     const clipsDisplay = () => (
       <div className="pornlo_grid">
         {clips.map((clip) => (
-          <Clips clip={clip} key={clip._id} />
+          <Clips clip={clip} key={clip._id} user={this.props.user}/>
         ))}
       </div>
     );
