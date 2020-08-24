@@ -71,17 +71,7 @@ function Clips({ clip, user }) {
           </span>
         ))}
       </div>
-      <a
-        href={
-          user
-            ? clip.url
-            : () => {
-                window.location = "/login";
-              }
-        }
-        alt="#"
-        className="clip_link"
-      >
+      <a href={user ? clip.url : "/login"} alt="#" className="clip_link">
         Link here
         <FontAwesomeIcon icon={faTired} style={{ color: "antiquewhite" }} />
       </a>
