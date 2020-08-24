@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useTrail, animated, config } from "react-spring";
 import { RingLoader } from "react-spinners";
-import { toast, ToastContainer } from "react-toastify";
-function UploadBtn({ data_upload, user, locked, loading: { load, text } }) {
+import { toast } from "react-toastify";
+function UploadBtn({ data_upload, admin, locked, loading: { load, text } }) {
   const item = [
     { char: "U", id: 0 },
     { char: "P", id: 1 },
@@ -46,11 +46,10 @@ function UploadBtn({ data_upload, user, locked, loading: { load, text } }) {
 
   //uploadValidation -> locked & admin
   const uploadValidation = () => {
-    if (user && locked) {
+    if (admin && locked) {
       data_upload();
     } else if (locked) {
       toast.error("Only administrator can upload");
-      window.location = "/login";
     } else {
       return null;
     }
@@ -66,8 +65,8 @@ function UploadBtn({ data_upload, user, locked, loading: { load, text } }) {
         <p>{text}</p>
       </div>
     );
-  } 
-  
+  }
+
   //render
   return (
     <div

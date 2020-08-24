@@ -18,7 +18,7 @@ export async function login(username, password) {
       window.location = `/profile/${JSON.parse(getCurrrentUser()).name}`;
     }
   } catch (err) {
-    toast.error("Server Down");
+    toast.error("Server Down :( ");
   }
 }
 

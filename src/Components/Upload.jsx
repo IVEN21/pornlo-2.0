@@ -22,7 +22,7 @@ class Upload extends Component {
   };
   //reminder
   componentDidMount() {
-    toast("Only administrator can upload, click to login");
+    toast("Only administrator can upload!");
   }
   //toast click dynamic path
   toastClick = () => {
@@ -63,7 +63,7 @@ class Upload extends Component {
         this.setState({
           loading: { load: true, text: "Uploading Images to Cloud" },
         });
-        const promise = await http.post(apiEndpoint + "/upload", {
+        const promise = await http.post(apiEndpoint + "/clips/upload", {
           data: images[i].img,
         });
         img_url = [...img_url, { url: promise.data }];
@@ -107,6 +107,7 @@ class Upload extends Component {
             loading={this.state.loading}
             data_upload={this.images_upload}
             locked={this.lock()}
+            admin={this.props.admin}
           />
         </div>
       </div>

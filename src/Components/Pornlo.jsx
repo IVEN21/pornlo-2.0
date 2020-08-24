@@ -18,9 +18,10 @@ class Pornlo extends Component {
     window.scrollTo(0, 0);
     this.setState({ loading: true });
     try {
-      this.setState({ porns: await getPorns() });
+      const porns = await getPorns();
+      this.setState({ porns: porns.reverse() });
     } catch (error) {
-      toast.error("server down");
+      toast.error("Server Down :( ");
     }
     this.setState({ loading: false });
   }

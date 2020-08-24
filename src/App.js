@@ -20,8 +20,10 @@ function App() {
   //auth
 
   var user = "";
+  var admin = null;
   try {
     user = JSON.parse(getCurrrentUser()).name;
+    admin = JSON.parse(getCurrrentUser()).admin;
   } catch (error) {
     console.log("can not get user");
   }
@@ -42,7 +44,10 @@ function App() {
 
       {/* Route Components */}
       <Switch>
-        <Route path="/upload" component={Upload} />
+        <Route
+          path="/upload"
+          render={(props) => <Upload admin={admin} {...props} />}
+        />
         <Route path="/login" component={Login} />
         <Route path="/pornlo" component={Pornlo} />
         <Route path="/checkout" component={Premium} />
