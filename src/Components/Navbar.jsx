@@ -29,7 +29,9 @@ function Navbar({ user, toggleMenu }) {
   const onSearch = ({ currentTarget }) => {
     setQuery(currentTarget.value);
   };
-  const search_bar = <SearchBox onchange={onSearch} value={query} />;
+  const search_bar = (
+    <SearchBox onchange={onSearch}  value={query} />
+  );
 
   //user login
   const logging = () => {

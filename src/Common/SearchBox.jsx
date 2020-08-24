@@ -1,8 +1,11 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 function SearchBox({ onchange }) {
   const clickSearch = (e) => {
-    if (e.key === "Enter") console.log("Feature Open Soon ...");
+    if (e.key === "Enter") {
+      toast.error("Feature Open Soon");
+    }
   };
   return (
     <div className="search_container">

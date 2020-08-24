@@ -13,6 +13,7 @@ import API from "./Components/API";
 import Signup from "./Components/Signup";
 import Logout from "./Components/Logout";
 import Profile from "./Components/Profile";
+import Consentment from "./Components/Consentment";
 //auth
 import { getCurrrentUser } from "./BackendServices/authService";
 
@@ -60,8 +61,8 @@ function App() {
         <Route
           path="/profile/:user"
           render={(props) => <Profile user={user} {...props} />}
-        />
-        <Redirect from="/" to="/pornlo" />
+        />{" "}
+        <Route path="/" component={Consentment} />
       </Switch>
     </div>
   );
