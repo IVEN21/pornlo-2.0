@@ -11,19 +11,16 @@ const Pagination = ({ count, pageSize, currentPage, onPage, user }) => {
     <ul className="pagination">
       {pages.map((pages) => (
         <NavLink
+          onClick={() => {
+            onPage(pages);
+            window.scrollTo(0, 0);
+          }}
           key={pages}
           style={{ listStyle: "none" }}
           to={`/pornlo/${pages}`}
           className={currentPage === pages ? "pagBtn active" : "pagBtn"}
         >
-          <li
-            onClick={() => {
-              onPage(pages);
-              window.scrollTo(0, 0);
-            }}
-          >
-            {pages}
-          </li>
+          <li>{pages}</li>
         </NavLink>
       ))}
     </ul>

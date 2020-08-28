@@ -1160,6 +1160,10 @@ input[type="file"] {
   text-align: left;
   padding: 0px 30px;
   width: 500px;
+ 
+}
+.pro_sub:last-child {
+
   margin-bottom: 170px;
 }
 .pro_flex {

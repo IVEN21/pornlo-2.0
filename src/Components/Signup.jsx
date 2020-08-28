@@ -14,6 +14,11 @@ class Signup extends Component {
     ["First Name"]: "",
   };
 
+  //scroll top
+  componentDidMount() {
+    window.scroll(0,0);
+  }
+
   //update state
   onchange = (e, credential) => {
     this.setState({ [credential]: e.currentTarget.value });
