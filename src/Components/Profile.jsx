@@ -126,18 +126,18 @@ class Profile extends Component {
               <div className="pro_flex">
                 {this.likesRendering()}
                 {this.state.likesClips.length === 0 && (
-                  <div style={{ fontSize: "20px" }}>
-                    User did not like any ...{" "}
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      padding: "10px 30px",
+                      lineHeight: "30px",
+                    }}
+                  >
+                    User did not like any... Go Watch Some Porns Please{" "}
                     <FontAwesomeIcon
                       icon={faSadTear}
                       style={{ color: "#c1dec9" }}
                     />
-                    <div
-                      className="pro_btn watch"
-                      onClick={() => (window.location = "/pornlo/1")}
-                    >
-                      Watch
-                    </div>
                   </div>
                 )}
               </div>
@@ -149,18 +149,18 @@ class Profile extends Component {
                 {" "}
                 {this.uploadRendering()}
                 {this.state.uploadClips.length === 0 && (
-                  <div style={{ fontSize: "20px" }}>
-                    User did not upload any ...{" "}
+                  <div
+                    style={{
+                      fontSize: "20px",
+                      padding: "10px 30px",
+                      lineHeight: "30px",
+                    }}
+                  >
+                    User did not upload any...{" "}
                     <FontAwesomeIcon
                       icon={faSadTear}
                       style={{ color: "#c4a7c7" }}
                     />
-                    <div
-                      className="pro_btn uploads"
-                      onClick={() => (window.location = "/upload")}
-                    >
-                      Upload
-                    </div>
                   </div>
                 )}
               </div>

@@ -1171,7 +1171,7 @@ input[type="file"] {
   color: #303030;
   position: relative;
   border-bottom: 1px solid black;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .clip_attr.likes {
   font-size: 15px;
@@ -1195,7 +1195,7 @@ input[type="file"] {
   top: 4%;
 }
 .pro_likes {
-  margin-bottom: 20px;
+  margin: 20px 0;
   width: 370px;
   height: 200px;
   position: relative;
@@ -1263,18 +1263,6 @@ input[type="file"] {
 }
 .pro_btn.update:hover {
   background-color: #a4e0ae;
-}
-.pro_btn.watch {
-  background-color: rgba(149, 219, 134, 0.5);
-}
-.pro_btn.uploads {
-  background-color: rgba(196, 167, 199, 0.5);
-}
-.pro_btn.watch:hover {
-  background-color: rgba(149, 219, 134, 1);
-}
-.pro_btn.uploads:hover {
-  background-color: rgba(196, 167, 199, 1);
 }
 .pro_footer {
   margin-top: 30px;

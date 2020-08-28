@@ -41,7 +41,7 @@ export async function refreshUser(userID) {
     localStorage.setItem(key, JSON.stringify(data));
     localStorage.setItem(key2, JSON.stringify(data.likes));
     localStorage.setItem(key3, JSON.stringify(data.uploads));
-    toast.success("Everything up to Data ");
+    toast.success("Everything up to data ");
   } catch (err) {
     toast.error("Server Down :( ");
   }
