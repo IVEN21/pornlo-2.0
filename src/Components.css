@@ -1119,7 +1119,8 @@ input[type="file"] {
 }
 .profile_container {
   width: 100vw;
-  height: 1300px;
+  min-height: 1100px;
+  max-height: 1300px;
 }
 .profile_user {
   padding: 30px;
@@ -1137,16 +1138,16 @@ input[type="file"] {
   padding-left: 25px;
 }
 
-.pro_sub::-webkit-scrollbar {
+.pro_flex::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 
-.pro_sub::-webkit-scrollbar-track {
+.pro_flex::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-.pro_sub::-webkit-scrollbar-thumb {
+.pro_flex::-webkit-scrollbar-thumb {
   background: #fac8d3;
 }
 .pro_mid {
@@ -1158,11 +1159,12 @@ input[type="file"] {
   text-align: left;
   padding: 30px;
   width: 500px;
-  min-height: fit-content;
+}
+.pro_flex {
+  min-height: 200px;
   max-height: 800px;
   overflow-y: scroll;
 }
-
 .pro_h4 {
   font-size: 1.3125rem;
   font-weight: 600;
@@ -1274,6 +1276,21 @@ input[type="file"] {
 .pro_btn.uploads:hover {
   background-color: rgba(196, 167, 199, 1);
 }
+.pro_footer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  background-color: #fafafa;
+}
+.pro_footer label {
+  padding-left: 50px;
+}
+.pro_footer label:hover {
+  color: pink;
+}
 @media screen and (max-width: 870px) {
   .pro_mid {
     display: block;
@@ -1294,7 +1311,9 @@ input[type="file"] {
   .pro_flex {
     display: flex;
   }
-
+  .pro_footer label {
+    padding-left: 25px;
+  }
 }
 
 /* Consentment Comp */

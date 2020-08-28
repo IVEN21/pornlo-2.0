@@ -166,6 +166,19 @@ class Profile extends Component {
               </div>
             </div>
           </div>
+          <div className="pro_footer">
+            <label>Terms</label>
+            <label>Condition</label>
+            <label>About</label>
+            <label>
+              <a
+                href="https://www.instagram.com/_yesloiven__/"
+                style={{ color: "pink" }}
+              >
+                AddMe
+              </a>
+            </label>
+          </div>
         </div>
       </div>
     );
