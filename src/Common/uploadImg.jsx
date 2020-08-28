@@ -37,7 +37,7 @@ function UploadImg({ input, img_submit }) {
       };
       setlock(true);
     } catch (error) {
-      console.log(error);
+    
     }
   };
 

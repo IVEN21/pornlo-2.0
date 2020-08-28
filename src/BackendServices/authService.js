@@ -53,7 +53,7 @@ export async function userLike(userID, clips) {
       likes: clips.likes,
       uploads: clips.uploads,
     });
-    console.log(clips.likes);
+   
   } catch (error) {}
 }
 
