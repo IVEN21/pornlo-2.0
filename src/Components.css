@@ -1120,9 +1120,8 @@ input[type="file"] {
 .profile_container {
   position: relative;
   width: 100vw;
-  min-height: 1150px;
+  min-height: 1100px;
   max-height: 1600px;
- 
 }
 .profile_user {
   padding: 30px;
@@ -1159,8 +1158,9 @@ input[type="file"] {
 .pro_sub {
   position: relative;
   text-align: left;
-  padding: 30px;
+  padding: 0px 30px;
   width: 500px;
+  margin-bottom: 170px;
 }
 .pro_flex {
   min-height: 200px;
