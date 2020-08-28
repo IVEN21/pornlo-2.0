@@ -11,6 +11,7 @@ import { localClipSave, localUploadSave } from "../BackendServices/authService";
 import http from "../BackendServices/http";
 import { RingLoader } from "react-spinners";
 import { toast } from "react-toastify";
+import {apiEndpoint} from "../BackendServices/config.json"
 function LikeClips({ clip, like }) {
   const [info, setInfo] = useState(false);
   const [heart, setHeart] = useState(true);
@@ -25,7 +26,7 @@ function LikeClips({ clip, like }) {
   const upload_delete = async () => {
     try {
       setloading(true);
-      await http.delete(`http://localhost:5000/clips/${clip._id}`);
+      await http.delete(`${apiEndpoint}/clips/${clip._id}`);
       localUploadSave(clip._id);
       toast.success("Delete Completed");
       setloading(false);
