@@ -1160,10 +1160,8 @@ input[type="file"] {
   text-align: left;
   padding: 0px 30px;
   width: 500px;
- 
 }
 .pro_sub:last-child {
-
   margin-bottom: 170px;
 }
 .pro_flex {
@@ -1286,6 +1284,42 @@ input[type="file"] {
 }
 .pro_footer label:hover {
   color: pink;
+}
+.pro_delete {
+  padding-top: 70px;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(240, 211, 229, 0.3);
+  text-align: center;
+}
+
+.pro_delete_btn {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pro_delete_btn div {
+  margin: 30px 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+.pro_delete_btn div:first-child {
+  background-color: rgba(211, 230, 193, 0.5);
+}
+.pro_delete_btn div {
+  background-color: rgba(212, 135, 123, 0.5);
+}
+.pro_delete_btn div:first-child:hover {
+  background-color: rgba(211, 230, 193, 0.9);
+}
+.pro_delete_btn div:hover {
+  background-color: rgba(212, 135, 123, 1);
 }
 @media screen and (max-width: 870px) {
   .pro_mid {

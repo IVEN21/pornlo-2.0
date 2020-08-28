@@ -29,11 +29,11 @@ class Profile extends Component {
 
     for (var i = 0; i < localLikes.length; i++) {
       const { data } = await http.get(`${apiEndpoint}/clips/${localLikes[i]}`);
-      likesClips.push(data);
+      if (data._id) likesClips.push(data);
     }
     for (i = 0; i < localUpload.length; i++) {
       const { data } = await http.get(`${apiEndpoint}/clips/${localUpload[i]}`);
-      uploadClips.push(data);
+      if (data._id) uploadClips.push(data);
     }
 
     this.setState({ likesClips, uploadClips });

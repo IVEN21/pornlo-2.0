@@ -6,8 +6,8 @@ import {
   localUploadfetch,
 } from "../BackendServices/authService";
 function Logout({ user }) {
-  useEffect(() => {
-    userLike(user._id, {
+  useEffect(async () => {
+    await userLike(user._id, {
       likes: JSON.parse(localClipfetch()),
       uploads: JSON.parse(localUploadfetch()),
     });

@@ -1,18 +1,38 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeartBroken,
   faHeart,
   faPaperclip,
+  faTrashAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { localClipSave } from "../BackendServices/authService";
-function LikeClips({ clip, user, like }) {
+import { localClipSave, localUploadSave } from "../BackendServices/authService";
+import http from "../BackendServices/http";
+import { RingLoader } from "react-spinners";
+import { toast } from "react-toastify";
+function LikeClips({ clip, like }) {
   const [info, setInfo] = useState(false);
   const [heart, setHeart] = useState(true);
+  const [delete_, setDelete_] = useState(false);
+  const [loading, setloading] = useState(false);
+  const [followup, setfollowup] = useState(true);
   const heart_click = (clipID) => {
     setHeart(!heart);
     localClipSave(clipID);
+  };
+
+  const upload_delete = async () => {
+    try {
+      setloading(true);
+      await http.delete(`http://localhost:5000/clips/${clip._id}`);
+      localUploadSave(clip._id);
+      toast.success("Delete Completed");
+      setloading(false);
+      setfollowup(false);
+    } catch (ex) {
+      toast.error("Something Went Wrong");
+    }
   };
 
   const heart_render = () => {
@@ -35,12 +55,44 @@ function LikeClips({ clip, user, like }) {
           onClick={() => heart_click(clip._id)}
         />
       );
+    } else {
+      return (
+        <FontAwesomeIcon
+          icon={faTrashAlt}
+          className="clip_heart likes"
+          style={{ color: "#ffa3a3" }}
+          onClick={() => setDelete_(true)}
+        />
+      );
     }
   };
 
   return (
-  
+    followup && (
       <div className="pro_likes">
+        {delete_ && (
+          <div className="pro_delete">
+            {loading ? (
+              <div
+                style={{
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  position: "absolute",
+                }}
+              >
+                <RingLoader color="green" />
+              </div>
+            ) : (
+              <React.Fragment>
+                <p> Are you sure you want to delete?</p>
+                <div className="pro_delete_btn">
+                  <div onClick={() => setDelete_(false)}>No</div>{" "}
+                  <div onClick={() => upload_delete()}>Yes</div>
+                </div>
+              </React.Fragment>
+            )}
+          </div>
+        )}
         <img
           src={clip.clips[0].url}
           width="370px"
@@ -51,11 +103,9 @@ function LikeClips({ clip, user, like }) {
 
         {heart_render(clip._id)}
         <a href={clip.url} style={{ color: "#241526" }}>
-          <FontAwesomeIcon
-            icon={faPaperclip}
-            className={like ? "clip_heart link" : "clip_heart justLink"}
-          />
+          <FontAwesomeIcon icon={faPaperclip} className={"clip_heart link"} />
         </a>
+
         {info && (
           <div className="pro_like_info">
             {clip.attrs.map((attrs) => (
@@ -66,7 +116,7 @@ function LikeClips({ clip, user, like }) {
           </div>
         )}
       </div>
-    
+    )
   );
 }
 
