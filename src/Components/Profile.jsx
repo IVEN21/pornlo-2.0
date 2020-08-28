@@ -12,7 +12,7 @@ import http from "../BackendServices/http";
 import LikeClips from "../Common/LikeClips";
 import { toast, ToastContainer } from "react-toastify";
 import { RingLoader } from "react-spinners";
-
+import {apiEndpoint} from "../BackendServices/config.json"
 class Profile extends Component {
   state = {
     loading: false,
@@ -29,13 +29,13 @@ class Profile extends Component {
 
     for (var i = 0; i < localLikes.length; i++) {
       const { data } = await http.get(
-        `http://localhost:5000/clips/${localLikes[i]}`
+        `${apiEndpoint}/clips/${localLikes[i]}`
       );
       likesClips.push(data);
     }
     for (i = 0; i < localUpload.length; i++) {
       const { data } = await http.get(
-        `http://localhost:5000/clips/${localUpload[i]}`
+        `${apiEndpoint}/clips/${localUpload[i]}`
       );
       uploadClips.push(data);
     }

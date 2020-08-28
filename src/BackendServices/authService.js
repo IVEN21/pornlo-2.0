@@ -34,7 +34,7 @@ export async function login(username, password) {
 
 export async function refreshUser(userID) {
   try {
-    const { data } = await http.post("http://localhost:5000/_users/refresh", {
+    const { data } = await http.post(`${apiEndpoint}/_users/refresh`, {
       userID,
     });
 
@@ -48,7 +48,7 @@ export async function refreshUser(userID) {
 }
 export async function userLike(userID, clips) {
   try {
-    await http.patch("http://localhost:5000" + "/_users/" + userID, {
+    await http.patch(apiEndpoint + "/_users/" + userID, {
       userID: userID,
       likes: clips.likes,
       uploads: clips.uploads,
