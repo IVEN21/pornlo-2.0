@@ -12,7 +12,7 @@ import http from "../BackendServices/http";
 import LikeClips from "../Common/LikeClips";
 import { toast, ToastContainer } from "react-toastify";
 import { RingLoader } from "react-spinners";
-import {apiEndpoint} from "../BackendServices/config.json"
+import { apiEndpoint } from "../BackendServices/config.json";
 class Profile extends Component {
   state = {
     loading: false,
@@ -28,15 +28,11 @@ class Profile extends Component {
     const uploadClips = [];
 
     for (var i = 0; i < localLikes.length; i++) {
-      const { data } = await http.get(
-        `${apiEndpoint}/clips/${localLikes[i]}`
-      );
+      const { data } = await http.get(`${apiEndpoint}/clips/${localLikes[i]}`);
       likesClips.push(data);
     }
     for (i = 0; i < localUpload.length; i++) {
-      const { data } = await http.get(
-        `${apiEndpoint}/clips/${localUpload[i]}`
-      );
+      const { data } = await http.get(`${apiEndpoint}/clips/${localUpload[i]}`);
       uploadClips.push(data);
     }
 
@@ -127,42 +123,47 @@ class Profile extends Component {
           <div className="pro_mid">
             <div className="pro_sub">
               <h4 className="pro_h4">{likesClips.length} Likes</h4>
-              {this.likesRendering()}
-              {this.state.likesClips.length === 0 && (
-                <div style={{ fontSize: "20px" }}>
-                  User did not like any ...{" "}
-                  <FontAwesomeIcon
-                    icon={faSadTear}
-                    style={{ color: "#c1dec9" }}
-                  />
-                  <div
-                    className="pro_btn watch"
-                    onClick={() => (window.location = "/pornlo/1")}
-                  >
-                    Watch
+              <div className="pro_flex">
+                {this.likesRendering()}
+                {this.state.likesClips.length === 0 && (
+                  <div style={{ fontSize: "20px" }}>
+                    User did not like any ...{" "}
+                    <FontAwesomeIcon
+                      icon={faSadTear}
+                      style={{ color: "#c1dec9" }}
+                    />
+                    <div
+                      className="pro_btn watch"
+                      onClick={() => (window.location = "/pornlo/1")}
+                    >
+                      Watch
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
 
             <div className="pro_sub">
               <h4 className="pro_h4">{uploadClips.length} Uploads</h4>
-              {this.uploadRendering()}
-              {this.state.uploadClips.length === 0 && (
-                <div style={{ fontSize: "20px" }}>
-                  User did not upload any ...{" "}
-                  <FontAwesomeIcon
-                    icon={faSadTear}
-                    style={{ color: "#c4a7c7" }}
-                  />
-                  <div
-                    className="pro_btn uploads"
-                    onClick={() => (window.location = "/upload")}
-                  >
-                    Upload
+              <div className="pro_flex">
+                {" "}
+                {this.uploadRendering()}
+                {this.state.uploadClips.length === 0 && (
+                  <div style={{ fontSize: "20px" }}>
+                    User did not upload any ...{" "}
+                    <FontAwesomeIcon
+                      icon={faSadTear}
+                      style={{ color: "#c4a7c7" }}
+                    />
+                    <div
+                      className="pro_btn uploads"
+                      onClick={() => (window.location = "/upload")}
+                    >
+                      Upload
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
         </div>

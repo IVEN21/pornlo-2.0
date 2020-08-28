@@ -39,32 +39,34 @@ function LikeClips({ clip, user, like }) {
   };
 
   return (
-    <div className="pro_likes">
-      <img
-        src={clip.clips[0].url}
-        width="370px"
-        height="200px"
-        onMouseEnter={() => setInfo(true)}
-        onMouseLeave={() => setInfo(false)}
-      ></img>
+  
+      <div className="pro_likes">
+        <img
+          src={clip.clips[0].url}
+          width="370px"
+          height="200px"
+          onMouseEnter={() => setInfo(true)}
+          onMouseLeave={() => setInfo(false)}
+        ></img>
 
-      {heart_render(clip._id)}
-      <a href={clip.url} style={{ color: "#241526" }}>
-        <FontAwesomeIcon
-          icon={faPaperclip}
-          className={like ? "clip_heart link" : "clip_heart justLink"}
-        />
-      </a>
-      {info && (
-        <div className="pro_like_info">
-          {clip.attrs.map((attrs) => (
-            <span className="clip_attr likes" key={attrs._id}>
-              {attrs.attr}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
+        {heart_render(clip._id)}
+        <a href={clip.url} style={{ color: "#241526" }}>
+          <FontAwesomeIcon
+            icon={faPaperclip}
+            className={like ? "clip_heart link" : "clip_heart justLink"}
+          />
+        </a>
+        {info && (
+          <div className="pro_like_info">
+            {clip.attrs.map((attrs) => (
+              <span className="clip_attr likes" key={attrs._id}>
+                {attrs.attr}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    
   );
 }
 

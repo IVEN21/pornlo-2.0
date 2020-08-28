@@ -1139,6 +1139,7 @@ input[type="file"] {
 
 .pro_sub::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
 }
 
 .pro_sub::-webkit-scrollbar-track {
@@ -1148,21 +1149,20 @@ input[type="file"] {
 .pro_sub::-webkit-scrollbar-thumb {
   background: #fac8d3;
 }
-
+.pro_mid {
+  display: flex;
+  justify-content: center;
+}
 .pro_sub {
   position: relative;
   text-align: left;
   padding: 30px;
   width: 500px;
-  height: 800px;
+  min-height: fit-content;
+  max-height: 800px;
   overflow-y: scroll;
 }
-.pro_mid {
-  margin-top: 40px;
-  height: 800px;
-  display: flex;
-  justify-content: center;
-}
+
 .pro_h4 {
   font-size: 1.3125rem;
   font-weight: 600;
@@ -1279,6 +1279,24 @@ input[type="file"] {
     display: block;
   }
 }
+@media screen and (max-width: 420px) {
+  .pro_sub {
+    padding: 0;
+    width: 100%;
+  }
+  .pro_likes {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    width: 370px;
+    height: 200px;
+    box-shadow: unset;
+  }
+  .pro_flex {
+    display: flex;
+  }
+
+}
+
 /* Consentment Comp */
 .consentment.comp {
   width: 100%;
