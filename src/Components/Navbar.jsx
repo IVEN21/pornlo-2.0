@@ -6,7 +6,7 @@ import SearchBox from "../Common/SearchBox";
 function Navbar({ user, toggleMenu }) {
   //LOGO
   const logo = (
-    <Link className="navbar-brand" to="/pornlo">
+    <Link className="navbar-brand" to="/pornlo/1">
       <div id="logo">
         <span>Pornlo</span>
         <FontAwesomeIcon
@@ -49,7 +49,7 @@ function Navbar({ user, toggleMenu }) {
       );
     else
       return (
-        <NavLink className="nav_item" to="login">
+        <NavLink className="nav_item" to="/login">
           Login
         </NavLink>
       );

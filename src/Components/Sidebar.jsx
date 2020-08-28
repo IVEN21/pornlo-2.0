@@ -32,7 +32,7 @@ function Sidebar({ onSide, user, menuClose }) {
   });
 
   //side items animation
-  const side_items_1 = [{ name: "Home", id: 1, path: "/pornlo" }];
+  const side_items_1 = [{ name: "Home", id: 1, path: "/pornlo/1" }];
   var side_items_2 = [
     { name: "Categories", id: 3 },
     { name: "Upload", id: 4, path: "/upload" },
@@ -116,12 +116,12 @@ function Sidebar({ onSide, user, menuClose }) {
   //categories item animation
   const [on_cate, toggleCate] = useState(false);
   const categories = [
-    { name: "- Japaness", id: 100, path: "/pornlo/japs" },
-    { name: "- Korean", id: 101, path: "/pornlo/korean" },
-    { name: "- Chinese", id: 102, path: "/pornlo/chinese" },
-    { name: "- Blondy", id: 103, path: "/pornlo/american" },
-    { name: "- Big Boobs", id: 104, path: "/pornlo/大奶" },
-    { name: "- Long legs", id: 105, path: "/pornlo/长腿" },
+    { name: "- Japaness", id: 100, path: "/pornlo/1" },
+    { name: "- Korean", id: 101, path: "/pornlo/1" },
+    { name: "- Chinese", id: 102, path: "/pornlo/1" },
+    { name: "- Blondy", id: 103, path: "/pornlo/1" },
+    { name: "- Big Boobs", id: 104, path: "/pornlo/1" },
+    { name: "- Long legs", id: 105, path: "/pornlo/1" },
   ];
 
   //categories trail animation

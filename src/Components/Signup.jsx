@@ -64,7 +64,6 @@ class Signup extends Component {
         username: Username,
         password: Password,
       });
-      console.log(data.username, Password);
       login(data.username, Password);
     } catch (err) {
       if (err.response.status === 409) toast.error("Username is taken");
@@ -111,6 +110,7 @@ class Signup extends Component {
           <div className="login_varify">
             <p>When the image is correct way up, click done</p>
             <img
+              alt=""
               src={require("../images/wind.svg")}
               width="100px"
               height="100px"

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import "./Components.css";
 //components
@@ -20,15 +20,7 @@ import { getCurrrentUser } from "./BackendServices/authService";
 function App() {
   //auth
 
-  var user = "";
-  var admin = null;
-  try {
-    user = JSON.parse(getCurrrentUser()).name;
-    admin = JSON.parse(getCurrrentUser()).admin;
-  } catch (error) {
-    console.log("can not get user");
-  }
-
+  const user = getCurrrentUser();
   //toggle menu
   const [onSide, setSide] = useState(false);
   const toggleMenu = () => {
@@ -37,32 +29,42 @@ function App() {
   const menuClosed = () => {
     setSide(false);
   };
+
   return (
     <div className="App">
       {/* Universal Components */}
-      <Navabr toggleMenu={toggleMenu} user={user} />
-      <Sidebar onSide={onSide} menuClose={menuClosed} user={user} />
+      <Navabr toggleMenu={toggleMenu} user={user && user.name} />
+      <Sidebar
+        onSide={onSide}
+        menuClose={menuClosed}
+        user={user && user.name}
+      />
 
       {/* Route Components */}
       <Switch>
         <Route
           path="/upload"
-          render={(props) => <Upload admin={admin} {...props} />}
+          render={(props) => <Upload user={user && user} {...props} />}
         />
         <Route path="/login" component={Login} />
         <Route
           path="/pornlo"
-          render={(props) => <Pornlo {...props} user={user} />}
+          render={(props) => <Pornlo {...props} user={user && user} />}
         />
+
         <Route path="/checkout" component={Premium} />
         <Route path="/api" component={API} />
         <Route path="/signup" component={Signup} />
-        <Route path="/logout" component={Logout} />
+        <Route
+          path="/logout"
+          render={(props) => <Logout {...props} user={user} />}
+        />
         <Route
           path="/profile/:user"
           render={(props) => <Profile user={user} {...props} />}
-        />{" "}
-        <Route path="/" component={Consentment} />
+        />
+
+        <Route exact path="/" component={Consentment} />
       </Switch>
     </div>
   );

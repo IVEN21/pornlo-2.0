@@ -62,9 +62,9 @@ function botComp() {
 function footerComp() {
   return (
     <div className="prem_footer">
-      <a href="#">Terms</a>
-      <a href="#">About</a>
-      <a href="#">Privacy</a>
+      <a href="#1">Terms</a>
+      <a href="#1">About</a>
+      <a href="#1">Privacy</a>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import UploadBtn from "../Common/UploadBtn";
 import http from "../BackendServices/http";
 import { apiEndpoint } from "../BackendServices/config.json";
 import { toast } from "react-toastify";
+import { localUploadSave } from "../BackendServices/authService";
 
 class Upload extends Component {
   state = {
@@ -26,7 +27,7 @@ class Upload extends Component {
   }
   //toast click dynamic path
   toastClick = () => {
-    if (this.state.toastclick) return () => (window.location = "/pornlo");
+    if (this.state.toastclick) return () => (window.location = "/pornlo/1");
     else return () => (window.location = "/login");
   };
 
@@ -79,11 +80,12 @@ class Upload extends Component {
   clips_info_upload = async (img_url) => {
     try {
       this.setState({ loading: { load: true, text: "Uploading to API" } });
-      await http.post(apiEndpoint + "/clips", {
+      const { data } = await http.post(apiEndpoint + "/clips", {
         clips: img_url,
         attrs: this.state.attrs,
         url: this.state.url,
       });
+      localUploadSave(data._id);
       this.setState({ loading: { load: false, text: "DONE!" } });
     } catch (error) {
       toast.error("data could not be uploaded due to api problem");
@@ -107,7 +109,7 @@ class Upload extends Component {
             loading={this.state.loading}
             data_upload={this.images_upload}
             locked={this.lock()}
-            admin={this.props.admin}
+            admin={this.props.user && this.props.user.admin}
           />
         </div>
       </div>

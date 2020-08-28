@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, config, useSpring } from "react-spring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RingLoader } from "react-spinners";
 import {
   faCocktail,
   faTired,
@@ -8,12 +9,14 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { Waypoint } from "react-waypoint";
+import { localClipSave, localClipfetch } from "../BackendServices/authService";
 
 function Clips({ clip, user }) {
   const [index, set] = useState(0);
   const [clip_on, clip_toggle] = useState(false);
   const [info_on, info_toggle] = useState(false);
   const [heart, setHeart] = useState(false);
+
   useEffect(() => {
     const interval =
       clip_on &&
@@ -25,28 +28,44 @@ function Clips({ clip, user }) {
     };
   }, [clip_on]);
 
-  const heart_click = () => {
+  useEffect(() => {
+    const localLikes = JSON.parse(localClipfetch());
+    if (localLikes) {
+      for (var i = 0; i < localLikes.length; i++) {
+        if (localLikes[i] === clip._id || heart) {
+          setHeart(true);
+        }
+      }
+    }
+  });
+
+  const heart_click = (clipID) => {
     setHeart(!heart);
-    //backend
-    console.log("call backend: ", !heart);
+    localClipSave(clipID);
   };
 
-  const heart_render = () =>
-    heart ? (
-      <FontAwesomeIcon
-        icon={faHeart}
-        className="clip_heart"
-        style={{ color: "#87143b" }}
-        onClick={heart_click}
-      />
-    ) : (
-      <FontAwesomeIcon
-        icon={faHeartBroken}
-        className="clip_heart"
-        onClick={heart_click}
-      />
-    );
-
+  const heart_render = () => {
+    if (user) {
+      if (heart) {
+        return (
+          <FontAwesomeIcon
+            icon={faHeart}
+            className="clip_heart"
+            style={{ color: "#87143b" }}
+            onClick={() => heart_click(clip._id)}
+          />
+        );
+      }
+      return (
+        <FontAwesomeIcon
+          icon={faHeartBroken}
+          className="clip_heart"
+          style={{ color: "#49364d" }}
+          onClick={() => heart_click(clip._id)}
+        />
+      );
+    }
+  };
   const clip_transitions = useTransition(
     clip.clips[index],
     (item) => item._id,
@@ -104,7 +123,7 @@ function Clips({ clip, user }) {
           style={info_on ? { color: "black" } : { color: "pink" }}
           onClick={() => info_toggle(!info_on)}
         />
-        {heart_render()}
+        {heart_render(clip._id)}
         {info_render()}
       </div>
     </React.Fragment>

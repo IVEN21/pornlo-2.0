@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { getPorns } from "../BackendServices/pornsService";
-import { RingLoader } from "react-spinners";
-import pagination from "../Common/pigination";
-import Clips from "../Common/Clips";
-import Pagination from "../Components/Pagination";
+
+import ClipsDisplay from "../Components/Clipsdiaplay";
+
 import { toast, ToastContainer } from "react-toastify";
+import { Route } from "react-router-dom";
 class Pornlo extends Component {
   state = { currentPage: 1, pageSize: 6, porns: [], loading: false };
 
@@ -16,6 +16,7 @@ class Pornlo extends Component {
   //update data
   async componentDidMount() {
     window.scrollTo(0, 0);
+
     this.setState({ loading: true });
     try {
       const porns = await getPorns();
@@ -27,38 +28,27 @@ class Pornlo extends Component {
   }
 
   render() {
-    const { porns, pageSize, currentPage } = this.state;
+    const { porns, pageSize,loading } = this.state;
 
-    //paginate pages
-    const clips = pagination(porns, pageSize, currentPage);
-
-    //render loader
-    const loder = () => (
-      <div className="loader">
-        <RingLoader color="pink" size="100px" loading={true} />
-      </div>
-    );
-
-    //render clips with pagination
-    const clipsDisplay = () => (
-      <div className="pornlo_grid">
-        {clips.map((clip) => (
-          <Clips clip={clip} key={clip._id} user={this.props.user}/>
-        ))}
-      </div>
-    );
 
     //render component
     return (
       <div className="pornlo comp">
-        <ToastContainer />
-        {this.state.loading ? loder() : clipsDisplay()}
-        <Pagination
-          count={porns.length}
-          pageSize={pageSize}
-          onPage={this.onPage}
-          currentPage={currentPage}
+        <Route
+          path={`/pornlo/:id`}
+          render={(props) => (
+            <ClipsDisplay
+              loading={loading}
+              {...props}
+              porns={porns}
+              pageSize={pageSize}
+              user={this.props.user}
+              onPage={this.onPage}
+            />
+          )}
         />
+        <ToastContainer />
+     
       </div>
     );
   }

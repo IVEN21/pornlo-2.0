@@ -1,5 +1,6 @@
 import React from "react";
-const Pagination = ({ count, pageSize, currentPage, onPage }) => {
+import { NavLink } from "react-router-dom";
+const Pagination = ({ count, pageSize, currentPage, onPage, user }) => {
   if (Math.ceil(count / pageSize) === 1) return null;
   const pages = [];
   for (let i = 0; i < Math.ceil(count / pageSize); i++) {
@@ -9,16 +10,21 @@ const Pagination = ({ count, pageSize, currentPage, onPage }) => {
   return (
     <ul className="pagination">
       {pages.map((pages) => (
-        <li
+        <NavLink
           key={pages}
+          style={{ listStyle: "none" }}
+          to={`/pornlo/${pages}`}
           className={currentPage === pages ? "pagBtn active" : "pagBtn"}
-          onClick={() => {
-            onPage(pages);
-            window.scrollTo(0, 0);
-          }}
         >
-          {pages}
-        </li>
+          <li
+            onClick={() => {
+              onPage(pages);
+              window.scrollTo(0, 0);
+            }}
+          >
+            {pages}
+          </li>
+        </NavLink>
       ))}
     </ul>
   );
