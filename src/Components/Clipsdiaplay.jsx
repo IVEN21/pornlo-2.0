@@ -30,13 +30,15 @@ function Clipsdiaplay({
   return (
     <React.Fragment>
       {loading ? loder() : clipsDisplay()}
-      <Pagination
-        user={user}
-        count={porns.length}
-        pageSize={pageSize}
-        onPage={onPage}
-        currentPage={params.id}
-      />
+     
+        <Pagination
+          user={user}
+          count={porns.length}
+          pageSize={pageSize}
+          onPage={onPage}
+          currentPage={params.id}
+        />
+     
     </React.Fragment>
   );
 }

@@ -6,7 +6,7 @@ import ClipsDisplay from "../Components/Clipsdiaplay";
 import { toast, ToastContainer } from "react-toastify";
 import { Route } from "react-router-dom";
 class Pornlo extends Component {
-  state = { currentPage: 1, pageSize: 6, porns: [], loading: false };
+  state = { currentPage: 1, pageSize: 9, porns: [], loading: false };
 
   //update current page
   onPage = (page) => {
@@ -28,27 +28,28 @@ class Pornlo extends Component {
   }
 
   render() {
-    const { porns, pageSize,loading } = this.state;
-
+    const { porns, pageSize, loading } = this.state;
 
     //render component
     return (
       <div className="pornlo comp">
-        <Route
-          path={`/pornlo/:id`}
-          render={(props) => (
-            <ClipsDisplay
-              loading={loading}
-              {...props}
-              porns={porns}
-              pageSize={pageSize}
-              user={this.props.user}
-              onPage={this.onPage}
-            />
-          )}
-        />
+        <div style={{ position: "relative" }}>
+          <p>Showing {porns.length} in database</p>
+          <Route
+            path={`/pornlo/:id`}
+            render={(props) => (
+              <ClipsDisplay
+                loading={loading}
+                {...props}
+                porns={porns}
+                pageSize={pageSize}
+                user={this.props.user}
+                onPage={this.onPage}
+              />
+            )}
+          />
+        </div>
         <ToastContainer />
-     
       </div>
     );
   }

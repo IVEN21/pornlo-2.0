@@ -92,17 +92,23 @@ function Clips({ clip, user }) {
       </div>
       <a href={user ? clip.url : "/login"} alt="#" className="clip_link">
         Link here
-        <FontAwesomeIcon icon={faTired} style={{ color: "antiquewhite" }} />
+        <FontAwesomeIcon
+          icon={faTired}
+          style={{ color: "antiquewhite", paddingLeft: "5px" }}
+        />
       </a>
     </animated.div>
   );
   return (
     <React.Fragment>
-      <div className="clip-container">
+      <div
+        className="clip-container"
+  
+      >
         {window.innerWidth < 650 && (
           <Waypoint
-            bottomOffset="53%"
-            topOffset="3%"
+            topOffset="10%"
+            bottomOffset="55%"
             onEnter={() => clip_toggle(true)}
             onLeave={() => clip_toggle(false)}
           />
@@ -117,12 +123,12 @@ function Clips({ clip, user }) {
             onClick={() => set((index + 1) % 3)}
           />
         ))}
-        <FontAwesomeIcon
-          icon={faCocktail}
-          className="cocktail"
-          style={info_on ? { color: "black" } : { color: "pink" }}
-          onClick={() => info_toggle(!info_on)}
-        />
+        <div onClick={() => info_toggle(!info_on)} className="cocktail">
+          <FontAwesomeIcon
+            icon={faCocktail}
+            style={info_on ? { color: "#fce3ff" } : { color: "#d69485" }}
+          />
+        </div>
         {heart_render(clip._id)}
         {info_render()}
       </div>

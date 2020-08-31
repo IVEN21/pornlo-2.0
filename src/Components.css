@@ -255,28 +255,53 @@ a {
   position: relative;
   display: flex;
   justify-content: center;
-  min-height: 840px;
-  max-height: 100vh;
+  height: 1000px;
 }
+.pornlo.comp p {
+  text-indent: 20px;
+  font-family: "Indie Flower", cursive;
+  color: white;
+  font-weight: 300;
+  font-size: 30px;
+  width: fit-content;
+  position: relative;
+  margin-top: 60px;
+}
+.pornlo.comp p::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+}
+
 .pornlo_grid {
-  margin-top: calc(50px + 3%);
-  width: calc(500px + 50%);
+  width: calc(1100px);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, calc(270px));
-  grid-gap: 20px;
+  grid-template-columns: repeat(3, 330px);
+  grid-template-rows: repeat(3, calc(200px));
+  grid-row-gap: 30px;
+  grid-column-gap: 40px;
   position: relative;
   padding: 20px;
 }
 .clip-container {
   overflow: hidden;
-  height: calc(270px);
+  height: calc(200px);
   position: relative;
   cursor: grab;
+  transition: all 0.4s ease;
+  box-shadow: 0rem 0.05rem 0.1rem #ffd1f3;
 }
-.loader {
-  padding-top: 250px;
+
+.clip-container:hover {
+  border-radius: 20px;
+  transform: translateY(-10px);
+  box-shadow: 0rem 0.5rem 1rem #ffd1f3;
 }
+
 .clip {
   position: absolute;
   width: 100%;
@@ -301,10 +326,11 @@ a {
 }
 
 .cocktail {
+  padding: 0px 3px;
   position: absolute;
   right: 20px;
   bottom: 50%;
-  font-size: 30px;
+  font-size: 26px;
   cursor: grab;
   z-index: 50;
 }
@@ -321,15 +347,16 @@ a {
 }
 .clip_info_bottom {
   position: absolute;
-  top: 50%;
+  top: 30%;
   height: 50%;
-  width: 220px;
+  width: 200px;
 }
 .clip_info_bottom span {
   color: #a88de0;
 }
 
 .clip_attr {
+  font-size: 15px;
   border: 2px solid pink;
   border-radius: 30px;
   padding: 7px;
@@ -346,21 +373,23 @@ a {
   color: pink;
   border: 2px solid antiquewhite;
   border-radius: 30px;
-  font-size: 20px;
+  font-size: 18px;
 }
 .clip_link:hover {
   text-decoration: none;
-  color: white;
+  background-color: rgba(119, 96, 143, 0.4);
 }
 .clip_heart {
-  padding: 5px;
   position: absolute;
-  left: 2%;
-  bottom: 4%;
+  left: 4%;
+  bottom: 5%;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 23px;
+  
 }
 .pagination {
+  right: 10px;
+  justify-content: right;
   display: flex;
   position: absolute;
   bottom: 20px;
@@ -385,34 +414,39 @@ a {
   background-color: var(--themePrimary);
 }
 
-@media screen and (max-width: 1255px) {
+@media screen and (max-width: 1110px) {
   .pornlo {
-    max-height: unset;
-    min-height: unset;
-    height: 1150px;
+    height: 1400px;
   }
+
   .pornlo_grid {
-    width: calc(600px + 30%);
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 270px);
+    width: calc(750px);
+    grid-template-columns: repeat(2, 330px);
+    grid-template-rows: repeat(5, calc(200px));
   }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 715px) {
   .pornlo {
-    height: 2130px;
+    height: 2380px;
   }
+
   .pornlo_grid {
-    width: 550px;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 300px);
+    width: calc(370px);
+    grid-template-columns: repeat(1, 330px);
+    grid-template-rows: repeat(9, calc(200px));
   }
 }
 @media screen and (max-width: 420px) {
-  .pornlo_grid {
-    position: absolute;
-    width: 100%;
-    padding: unset;
-    margin-top: unset;
+  .clip-container {
+ 
+  }
+
+  .clip-container:hover {
+    border-radius: unset;
+  
+  }
+  .clip_heart {
+    cursor: unset;
   }
 }
 /* Login Comp */
@@ -1299,7 +1333,6 @@ input[type="file"] {
 }
 
 .pro_delete_btn {
-  
   display: flex;
   justify-content: center;
   align-items: center;
