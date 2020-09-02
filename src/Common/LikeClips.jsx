@@ -96,7 +96,7 @@ function LikeClips({ clip, like }) {
         )}
         <img
           src={clip.clips[0].url}
-          width="370px"
+          width="350px"
           height="200px"
           onMouseEnter={() => setInfo(true)}
           onMouseLeave={() => setInfo(false)}
