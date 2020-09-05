@@ -116,12 +116,12 @@ function Sidebar({ onSide, user, menuClose }) {
   //categories item animation
   const [on_cate, toggleCate] = useState(false);
   const categories = [
-    { name: "- Japaness", id: 100, path: "/pornlo/1" },
-    { name: "- Korean", id: 101, path: "/pornlo/1" },
-    { name: "- Chinese", id: 102, path: "/pornlo/1" },
-    { name: "- Blondy", id: 103, path: "/pornlo/1" },
-    { name: "- Big Boobs", id: 104, path: "/pornlo/1" },
-    { name: "- Long legs", id: 105, path: "/pornlo/1" },
+    { name: "~ Japaness", id: 100, path: "/pornlo/1" },
+    { name: "~ Blonde", id: 101, path: "/pornlo/1" },
+    { name: "~ Teen", id: 102, path: "/pornlo/1" },
+    { name: "~ Masturbation", id: 103, path: "/pornlo/1" },
+    { name: "~ Big Tits", id: 104, path: "/pornlo/1" },
+    { name: "~ 1080p", id: 105, path: "/pornlo/1" },
   ];
 
   //categories trail animation

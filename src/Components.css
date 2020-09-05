@@ -3,6 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
@@ -212,16 +213,22 @@ a {
   height: fit-content;
 }
 .cate_items {
-  color: var(--lightPurple);
+  font-weight: 500;
+  color: #262633;
   display: inline-block;
-  background-color: #6c5c73;
+  background-color: rgba(254, 222, 255, 1);
   padding: 5px 10px;
   border-radius: 20px;
   z-index: 60;
   margin-bottom: 15px;
+  transition: all 200ms ease-in-out;
 }
+
 .active {
   color: var(--lightPurple);
+}
+.cate_items.active {
+  color: #262633;
 }
 .side_items.active {
   border-right: 5px solid var(--lightPurple);
@@ -231,7 +238,8 @@ a {
 }
 
 .cate_items:hover {
-  color: #b289c9;
+  transform: translateX(20px);
+  color: #f5bada;
 }
 @media screen and (max-width: 420px) {
   .side_items {
@@ -293,11 +301,9 @@ a {
   position: relative;
   cursor: grab;
   transition: all 0.4s ease;
-
 }
 
 .clip-container:hover {
-
   transform: translateY(-10px);
   box-shadow: 0rem 0.5rem 1.2rem #ffd1f3;
 }
@@ -326,15 +332,20 @@ a {
 }
 
 .cocktail {
+  color: antiquewhite;
   padding: 0px 3px;
   position: absolute;
   right: 20px;
   bottom: 50%;
   font-size: 26px;
-  cursor: grab;
+  cursor: pointer;
   z-index: 50;
+  transition: all 250ms ease;
 }
-
+.cocktail:hover {
+  color:#80656f ;
+  transform: rotate(-35deg) scale(1.2);
+}
 .clip_info {
   position: absolute;
   top: 0;

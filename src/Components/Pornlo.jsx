@@ -34,7 +34,7 @@ class Pornlo extends Component {
     return (
       <div className="pornlo comp">
         <div style={{ position: "relative" }}>
-          <p>Showing {porns.length} in database</p>
+          <p>Showing {porns.length} objects in database</p>
           <Route
             path={`/pornlo/:id`}
             render={(props) => (

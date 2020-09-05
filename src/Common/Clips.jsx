@@ -101,10 +101,7 @@ function Clips({ clip, user }) {
   );
   return (
     <React.Fragment>
-      <div
-        className="clip-container"
-  
-      >
+      <div className="clip-container">
         {window.innerWidth < 650 && (
           <Waypoint
             topOffset="10%"
@@ -123,11 +120,11 @@ function Clips({ clip, user }) {
             onClick={() => set((index + 1) % 3)}
           />
         ))}
-        <div onClick={() => info_toggle(!info_on)} className="cocktail">
-          <FontAwesomeIcon
-            icon={faCocktail}
-            style={info_on ? { color: "#fce3ff" } : { color: "#d69485" }}
-          />
+        <div
+          onClick={() => info_toggle(!info_on)}
+          className={info_on ? "cocktail" : "cocktail active"}
+        >
+          <FontAwesomeIcon icon={faCocktail} />
         </div>
         {heart_render(clip._id)}
         {info_render()}
