@@ -11,7 +11,7 @@ import { localClipSave, localUploadSave } from "../BackendServices/authService";
 import http from "../BackendServices/http";
 import { RingLoader } from "react-spinners";
 import { toast } from "react-toastify";
-import {apiEndpoint} from "../BackendServices/config.json"
+import { apiEndpoint } from "../BackendServices/config.json";
 function LikeClips({ clip, like }) {
   const [info, setInfo] = useState(false);
   const [heart, setHeart] = useState(true);

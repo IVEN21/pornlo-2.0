@@ -16,6 +16,7 @@ import Profile from "./Components/Profile";
 import Consentment from "./Components/Consentment";
 //auth
 import { getCurrrentUser } from "./BackendServices/authService";
+import PornFilter from "./Components/PornFilter";
 
 function App() {
   //auth
@@ -42,6 +43,8 @@ function App() {
 
       {/* Route Components */}
       <Switch>
+  
+        <Route path="/porns/:filter/:page" component={PornFilter} />
         <Route
           path="/upload"
           render={(props) => <Upload user={user && user} {...props} />}

@@ -116,12 +116,12 @@ function Sidebar({ onSide, user, menuClose }) {
   //categories item animation
   const [on_cate, toggleCate] = useState(false);
   const categories = [
-    { name: "~ Japaness", id: 100, path: "/pornlo/1" },
-    { name: "~ Blonde", id: 101, path: "/pornlo/1" },
-    { name: "~ Teen", id: 102, path: "/pornlo/1" },
-    { name: "~ Masturbation", id: 103, path: "/pornlo/1" },
-    { name: "~ Big Tits", id: 104, path: "/pornlo/1" },
-    { name: "~ 1080p", id: 105, path: "/pornlo/1" },
+    { name: "~ Japaness", id: 100, path: "/porns/japanese/1" },
+    { name: "~ Blonde", id: 101, path: "/porns/blonde/1" },
+    { name: "~ Teen", id: 102, path: "/porns/teen/1" },
+    { name: "~ Masturbation", id: 103, path: "/porns/masturbation/1" },
+    { name: "~ Tits", id: 104, path: "/porns/tits/1" },
+    { name: "~ 1080p", id: 105, path: "/porns/1080p/1" },
   ];
 
   //categories trail animation
@@ -146,10 +146,12 @@ function Sidebar({ onSide, user, menuClose }) {
       style={on_cate ? { pointerEvents: "all" } : { pointerEvents: "none" }}
     >
       {categories_animation.map((props, index) => (
-        <animated.div style={props} key={categories[index].id}>
-          <NavLink to={categories[index].path} className="cate_items">
-            {categories[index].name}
-          </NavLink>
+        <animated.div
+          style={props}
+          key={categories[index].id}
+          onClick={() => (window.location = categories[index].path)}
+        >
+          <div className="cate_items">{categories[index].name}</div>
         </animated.div>
       ))}
     </div>

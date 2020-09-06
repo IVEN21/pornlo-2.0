@@ -1,12 +1,8 @@
 import React from "react";
-import { toast } from "react-toastify";
 
-function SearchBox({ onchange }) {
-  const clickSearch = (e) => {
-    if (e.key === "Enter") {
-      toast.error("Feature Open Soon");
-    }
-  };
+
+function SearchBox({ onchange, clickSearch }) {
+  
   return (
     <div className="search_container">
       <input

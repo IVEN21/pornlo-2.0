@@ -5,6 +5,8 @@ import ClipsDisplay from "../Components/Clipsdiaplay";
 
 import { toast, ToastContainer } from "react-toastify";
 import { Route } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGrinHearts } from "@fortawesome/free-solid-svg-icons";
 class Pornlo extends Component {
   state = { currentPage: 1, pageSize: 9, porns: [], loading: false };
 
@@ -34,11 +36,18 @@ class Pornlo extends Component {
     return (
       <div className="pornlo comp">
         <div style={{ position: "relative" }}>
-          <p>Showing {porns.length} objects in database</p>
+          <p>
+            Showing all {porns.length} objects in database
+            <FontAwesomeIcon
+              icon={faGrinHearts}
+              style={{ paddingLeft: "7px", color: "#ffcfdb" }}
+            />
+          </p>
           <Route
             path={`/pornlo/:id`}
             render={(props) => (
               <ClipsDisplay
+                filter={false}
                 loading={loading}
                 {...props}
                 porns={porns}

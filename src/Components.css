@@ -285,6 +285,15 @@ a {
   left: 20px;
 }
 
+.pornlo.comp.filter p:nth-last-child(2)::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+}
 .pornlo_grid {
   width: calc(1100px);
   display: grid;
@@ -343,7 +352,7 @@ a {
   transition: all 250ms ease;
 }
 .cocktail:hover {
-  color:#80656f ;
+  color: #80656f;
   transform: rotate(-35deg) scale(1.2);
 }
 .clip_info {
@@ -367,6 +376,7 @@ a {
 }
 
 .clip_attr {
+  color: #d2bdff;
   font-size: 15px;
   border: 2px solid pink;
   border-radius: 30px;
@@ -375,6 +385,10 @@ a {
   margin-bottom: 7px;
   display: inline-block;
   width: fit-content;
+  cursor: pointer;
+}
+.clip_attr:hover {
+  background-color: rgba(224, 180, 177, 0.5);
 }
 .clip_link {
   padding: 5px;
@@ -382,7 +396,7 @@ a {
   right: 2%;
   bottom: 4%;
   color: pink;
-  border: 2px solid antiquewhite;
+  border: 2px solid #e8d1e2;
   border-radius: 30px;
   font-size: 18px;
 }
@@ -437,26 +451,23 @@ a {
 }
 @media screen and (max-width: 715px) {
   .pornlo {
-    height: 2380px;
+    height: 2420px;
   }
-
+  .pornlo.comp p {
+    margin-top: 20px;
+    max-width: 370px;
+  }
   .pornlo_grid {
     width: calc(370px);
     grid-template-columns: repeat(1, 330px);
     grid-template-rows: repeat(9, calc(200px));
   }
-}
-@media screen and (max-width: 420px) {
-  .clip-container {
+  .pornlo.comp p::after {
+    width: 330px;
+    text-align: center;
   }
+}
 
-  .clip-container:hover {
-    border-radius: unset;
-  }
-  .clip_heart {
-    cursor: unset;
-  }
-}
 /* Login Comp */
 .login {
   background-color: aliceblue;
@@ -1219,10 +1230,7 @@ input[type="file"] {
   border-bottom: 1px solid black;
   padding: 10px 20px;
 }
-.clip_attr.likes {
-  font-size: 15px;
-  background-color: rgba(255, 201, 232, 0.4);
-}
+
 .clip_heart.link {
   left: unset;
   right: 2%;
@@ -1248,17 +1256,16 @@ input[type="file"] {
   transition: all 0.4s ease;
   box-shadow: 0rem 0.1rem 0.3rem black;
 }
+
 .pro_likes:hover {
   transform: translateY(-10px);
   box-shadow: 0rem 0.5rem 1rem black;
 }
 
 .pro_like_info {
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
   padding: 10px;
   position: absolute;
-  background-color: rgba(240, 211, 229, 0.2);
+  background-color: rgba(44, 30, 36, 0.3);
   top: 80px;
   bottom: 0;
   left: 0;

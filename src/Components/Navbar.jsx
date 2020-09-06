@@ -29,8 +29,13 @@ function Navbar({ user, toggleMenu }) {
   const onSearch = ({ currentTarget }) => {
     setQuery(currentTarget.value);
   };
+  const clickSearch = (e) => {
+    if (e.key === "Enter") {
+      window.location = window.location = `/porns/${query}/1`;
+    }
+  };
   const search_bar = (
-    <SearchBox onchange={onSearch}  value={query} />
+    <SearchBox onchange={onSearch} value={query} clickSearch={clickSearch} />
   );
 
   //user login

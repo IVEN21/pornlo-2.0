@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Waypoint } from "react-waypoint";
 import { localClipSave, localClipfetch } from "../BackendServices/authService";
+import { Route, Link } from "react-router-dom";
 
 function Clips({ clip, user }) {
   const [index, set] = useState(0);
@@ -85,7 +86,13 @@ function Clips({ clip, user }) {
     <animated.div className="clip_info" style={info_animation}>
       <div className="clip_info_bottom">
         {clip.attrs.map((attrs) => (
-          <span className="clip_attr" key={attrs._id}>
+          <span
+            className="clip_attr"
+            key={attrs._id}
+            onClick={() =>
+              (window.location = `/porns/${attrs.attr.toLowerCase()}/1`)
+            }
+          >
             {attrs.attr}
           </span>
         ))}
@@ -94,7 +101,7 @@ function Clips({ clip, user }) {
         Link here
         <FontAwesomeIcon
           icon={faTired}
-          style={{ color: "antiquewhite", paddingLeft: "5px" }}
+          style={{ color: "antiquewhite", paddingLeft: "3px" }}
         />
       </a>
     </animated.div>
@@ -102,7 +109,7 @@ function Clips({ clip, user }) {
   return (
     <React.Fragment>
       <div className="clip-container">
-        {window.innerWidth < 650 && (
+        {window.innerWidth < 715 && (
           <Waypoint
             topOffset="10%"
             bottomOffset="55%"

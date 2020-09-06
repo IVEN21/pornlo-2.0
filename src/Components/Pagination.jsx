@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const Pagination = ({ count, pageSize, currentPage, onPage, user }) => {
+const Pagination = ({ count, pageSize, currentPage, onPage, filter }) => {
   if (Math.ceil(count / pageSize) === 1) return null;
   const pages = [];
   for (let i = 0; i < Math.ceil(count / pageSize); i++) {
@@ -17,7 +17,7 @@ const Pagination = ({ count, pageSize, currentPage, onPage, user }) => {
           }}
           key={pages}
           style={{ listStyle: "none" }}
-          to={`/pornlo/${pages}`}
+          to={!filter ? `/pornlo/${pages}` : `/porns/${filter}/${pages}`}
           className={currentPage === pages ? "pagBtn active" : "pagBtn"}
         >
           <li>{pages}</li>

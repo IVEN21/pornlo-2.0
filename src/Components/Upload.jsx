@@ -13,7 +13,7 @@ import { localUploadSave } from "../BackendServices/authService";
 class Upload extends Component {
   state = {
     imgs: [],
-    attrs: [],
+    attrs: null,
     url: "",
     loading: {
       load: false,
