@@ -138,6 +138,13 @@ a {
 .nav_item:hover {
   filter: brightness(200%);
 }
+.nav_item.active {
+  pointer-events: all;
+}
+.nav_item.disabled {
+  position: relative;
+  pointer-events: none;
+}
 
 @media screen and (max-width: 1080px) {
   .search_container {
@@ -778,10 +785,16 @@ button.focus {
   margin-top: 100px;
   width: 100%;
   height: 70px;
-  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fafafa;
+}
+.prem_footer label {
+  padding-left: 50px;
+}
+.prem_footer label:hover {
+  color: pink;
 }
 .prem_footer a {
   color: black;
@@ -793,6 +806,9 @@ button.focus {
 @media screen and (max-width: 695px) {
   .pre_bot {
     height: 1200px;
+  }
+  .prem_footer label {
+    padding-left: 30px;
   }
 }
 @media screen and (max-width: 420px) {
@@ -831,6 +847,9 @@ button.focus {
   }
   .pre_mid_right p:last-child {
     font-size: calc(1vw + 7px);
+  }
+  .prem_footer label {
+    padding-left: 15px;
   }
 }
 
@@ -880,7 +899,7 @@ button.focus {
   transition: all ease-in 250ms;
 }
 .upload_comp_submit:hover {
-  background-color: #38f295;
+  background-color: #875479;
   transform: rotate(15deg);
 }
 .submit_lock {
@@ -950,22 +969,88 @@ input[type="file"] {
   max-height: 100%;
   max-width: 100%;
 }
-/* attributes upload */
+/* Attributes upload */
 .up_grid.attr {
-  padding: 5px 40px;
+  padding: 30px 40px;
   position: relative;
+  text-align: left;
 }
+.up_grid.attr {
+  padding: 30px 40px;
+  position: relative;
+  text-align: left;
+}
+.up_grid.attr h2 {
+  margin: 0 0 10px 10px;
+  color: #453b36;
+}
+.att_tag {
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  background: rgba(255, 222, 241, 0.6);
+  color: #241d1d;
+  display: inline-block;
+  padding: 3px 5px 3px 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  border-radius: 7px;
+}
+.att_tag:hover {
+  background: rgba(255, 222, 241, 1);
+}
+.tag_lock {
+  pointer-events: all;
+  cursor: grab;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgba(248, 243, 239, 0.5);
+  border-radius: 7px;
+}
+.tag_delete {
+  z-index: 150;
+  font-size: 15px;
+  color: #d4fce0;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: 18px;
+  height: 18px;
+  background-color: #5f4663;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.att_tag::before {
+  background: var(--lightPurple);
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: "";
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 13px;
+}
+
 #attr_input {
-  display: block;
-  height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  font-size: 20px;
+  display: inline-block;
+  height: 32px;
+  padding: 0.1rem 0.4rem;
   font-size: 1rem;
   color: #495057;
   background-color: #fff;
   border: 1px solid #ced4da;
   border-radius: 5px;
-  margin-top: 15px;
-  width: 270px;
+  margin: 0;
+  width: 80px;
 }
 #attr_input:hover {
   border: 1px solid pink;
@@ -975,9 +1060,10 @@ input[type="file"] {
   border: 2px solid pink;
 }
 .attr_btn {
-  padding: 5px;
+  padding: 5px 10px;
   cursor: pointer;
   margin-right: 10px;
+  color: #614956;
 }
 .attr_btn.add {
   background-color: rgba(149, 219, 134, 0.5);
@@ -995,11 +1081,13 @@ input[type="file"] {
   pointer-events: none;
   background-color: grey;
 }
+
 /* url upload */
 .up_grid.url {
   padding: 20px 30px;
   position: relative;
 }
+
 #url_input:focus-within {
   outline: 0;
   border: 2px solid #a88de0;
@@ -1045,6 +1133,9 @@ input[type="file"] {
   }
   .up_grid.attr h2 {
     margin-top: 5px;
+  }
+  .up_grid.attr {
+    padding: 10px 20px;
   }
   .up_grid.url {
     padding: 20px 0px;
@@ -1173,7 +1264,7 @@ input[type="file"] {
 .profile_container {
   position: relative;
   width: 100vw;
-  min-height: 1100px;
+  min-height: 1300px;
   max-height: 1600px;
 }
 .profile_user {
@@ -1370,6 +1461,9 @@ input[type="file"] {
   background-color: rgba(212, 135, 123, 1);
 }
 @media screen and (max-width: 870px) {
+  .profile_container {
+    max-height: 2500px;
+  }
   .pro_mid {
     display: block;
   }

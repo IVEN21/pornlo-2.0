@@ -46,8 +46,11 @@ class PornFilter extends Component {
       <div className="pornlo comp">
         <div style={{ position: "relative" }}>
           <p>
-            Filtered {porns.length} objects from database (
-            {this.props.match.params.filter.trim()}
+            Filtered{" "}
+            {porns.length > 1
+              ? `${porns.length} objects`
+              : `${porns.length} object`}{" "}
+            from database ({this.props.match.params.filter.trim()}
             )
             <FontAwesomeIcon
               icon={faGrinSquintTears}

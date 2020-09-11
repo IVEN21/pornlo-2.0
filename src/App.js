@@ -34,16 +34,11 @@ function App() {
   return (
     <div className="App">
       {/* Universal Components */}
-      <Navabr toggleMenu={toggleMenu} user={user && user.name} />
-      <Sidebar
-        onSide={onSide}
-        menuClose={menuClosed}
-        user={user && user.name}
-      />
+      <Navabr toggleMenu={toggleMenu} user={user} />
+      <Sidebar onSide={onSide} menuClose={menuClosed} user={user} />
 
       {/* Route Components */}
       <Switch>
-  
         <Route path="/porns/:filter/:page" component={PornFilter} />
         <Route
           path="/upload"

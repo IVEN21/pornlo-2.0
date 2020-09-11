@@ -31,7 +31,7 @@ function Navbar({ user, toggleMenu }) {
   };
   const clickSearch = (e) => {
     if (e.key === "Enter") {
-      window.location = window.location = `/porns/${query}/1`;
+      window.location = window.location = `/porns/${query.trim()}/1`;
     }
   };
   const search_bar = (
@@ -43,9 +43,9 @@ function Navbar({ user, toggleMenu }) {
     if (user)
       return (
         <React.Fragment>
-          <NavLink className="nav_item" to={`/profile/${user}`}>
+          <NavLink className="nav_item" to={`/profile/${user.name}`}>
             <FontAwesomeIcon icon={faUser} />
-            {user}
+            {user.name}
           </NavLink>
           <NavLink className="nav_item" to="/logout">
             Logout
@@ -64,8 +64,11 @@ function Navbar({ user, toggleMenu }) {
   const nav_items = (
     <div className="nav_items">
       {logging()}
-      <NavLink className="nav_item" to="/api">
-        API
+      <NavLink
+        className={user && user.admin ? "nav_item" : "nav_item disabled"}
+        to={user && user.admin ? "/api" : "/WhatAreYouTryingToDo???"}
+      >
+        API 
       </NavLink>
     </div>
   );

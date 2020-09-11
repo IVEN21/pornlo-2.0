@@ -34,7 +34,7 @@ function botComp() {
       {saleBox(
         "Life Time Acess",
         "Own it forever!",
-        "$149",
+        "$0.85",
         "Limited time at this price",
         "Buy Now",
         "life_time"
@@ -42,7 +42,7 @@ function botComp() {
       {saleBox(
         "Monthly Menbership",
         "All access, low price",
-        "$6/Mon",
+        "$2.68/Mon",
         "Cancel Anytime",
         "Subscribe now",
         "month_time"
@@ -62,9 +62,17 @@ function botComp() {
 function footerComp() {
   return (
     <div className="prem_footer">
-      <a href="#1">Terms</a>
-      <a href="#1">About</a>
-      <a href="#1">Privacy</a>
+      <label>Terms</label>
+      <label>Condition</label>
+      <label>About</label>
+      <label
+        style={{ color: "pink", cursor: "pointer" }}
+        onClick={() =>
+          (window.location = "https://www.instagram.com/_yesloiven__/")
+        }
+      >
+        AddMe
+      </label>
     </div>
   );
 }

@@ -32,7 +32,7 @@ function Url({ url_submit }) {
           </span>
         </div>
       )}
-      <h2 style={{ color: "#290e2e" }}>Link</h2>
+      <h2 style={{ color: "#453b36" }}>Link</h2>
       <input
         id="url_input"
         onChange={({ currentTarget: { value } }) => seturl(value)}

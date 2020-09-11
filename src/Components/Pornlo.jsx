@@ -6,7 +6,10 @@ import ClipsDisplay from "../Components/Clipsdiaplay";
 import { toast, ToastContainer } from "react-toastify";
 import { Route } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGrinHearts } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGrinHearts,
+  faMehRollingEyes,
+} from "@fortawesome/free-solid-svg-icons";
 class Pornlo extends Component {
   state = { currentPage: 1, pageSize: 9, porns: [], loading: false };
 
@@ -37,11 +40,22 @@ class Pornlo extends Component {
       <div className="pornlo comp">
         <div style={{ position: "relative" }}>
           <p>
-            Showing all {porns.length} objects in database
-            <FontAwesomeIcon
-              icon={faGrinHearts}
-              style={{ paddingLeft: "7px", color: "#ffcfdb" }}
-            />
+            Showing{" "}
+            {porns.length > 1
+              ? `${porns.length} objects`
+              : `${porns.length} object`}{" "}
+            in database
+            {porns.length > 1 ? (
+              <FontAwesomeIcon
+                icon={faGrinHearts}
+                style={{ paddingLeft: "7px", color: "#ffcfdb" }}
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faMehRollingEyes}
+                style={{ paddingLeft: "7px", color: "#ffcfdb" }}
+              />
+            )}
           </p>
           <Route
             path={`/pornlo/:id`}

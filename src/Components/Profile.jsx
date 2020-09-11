@@ -10,7 +10,7 @@ import {
 } from "../BackendServices/authService";
 import http from "../BackendServices/http";
 import LikeClips from "../Common/LikeClips";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { RingLoader } from "react-spinners";
 import { apiEndpoint } from "../BackendServices/config.json";
 class Profile extends Component {
@@ -133,7 +133,7 @@ class Profile extends Component {
                       lineHeight: "30px",
                     }}
                   >
-                    User did not like any... Go Watch Some Porns Please{" "}
+                    User did not like any... go watch some porns please{" "}
                     <FontAwesomeIcon
                       icon={faSadTear}
                       style={{ color: "#c1dec9" }}
