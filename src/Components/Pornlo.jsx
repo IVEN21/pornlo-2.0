@@ -38,7 +38,7 @@ class Pornlo extends Component {
     //render component
     return (
       <div className="pornlo comp">
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative" }} className="pornlo_comp_inside">
           <p>
             Showing{" "}
             {porns.length > 1
