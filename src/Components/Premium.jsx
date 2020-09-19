@@ -118,7 +118,7 @@ function Premium(props) {
   const list = [
     { p: "Filtered Quality Porns", id: 1 },
     { p: "Everyday Update", id: 2 },
-    { p: "No Ads", id: 3 },
+    { p: "No Ads Lol!", id: 3 },
   ];
   const list_animation = useTrail(list.length, {
     from: {
