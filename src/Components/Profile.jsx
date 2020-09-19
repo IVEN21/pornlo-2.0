@@ -78,7 +78,7 @@ class Profile extends Component {
 
     return (
       <div className="profile comp">
-        <ToastContainer />
+        <ToastContainer onClick={() => (window.location = "/profile")} />
         <div className="profile_container">
           <div className="profile_user">
             <FontAwesomeIcon
@@ -111,10 +111,10 @@ class Profile extends Component {
           </div>
           {!user.approved && (
             <div className="pro_approved_div">
-              <p >
+              <p>
                 To grant fully access to all features on this website, you have
                 to contribute two quality porns found in any website. Input
-                links below and it will be verify by administrator. Pardon 24
+                links below and it will be verify by administrators. Pardon 24
                 hours after submitting.
               </p>
               <input /> <input />
