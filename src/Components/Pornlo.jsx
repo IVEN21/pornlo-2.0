@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { getPorns } from "../BackendServices/pornsService";
-
 import ClipsDisplay from "../Components/Clipsdiaplay";
-
 import { toast, ToastContainer } from "react-toastify";
 import { Route } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

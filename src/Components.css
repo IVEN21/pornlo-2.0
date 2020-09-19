@@ -725,7 +725,10 @@ button.focus {
   margin: 90px 30px;
   padding: 30px;
   color: antiquewhite;
+  position: relative;
+  overflow: hidden;
 }
+
 .sale_box h4 {
   font-size: 20px;
 }
@@ -755,7 +758,22 @@ button.focus {
   color: #9898fa;
 }
 .sale_box button:hover {
-  background-color: #a4ebd0;
+  background-color: #d4fcdb;
+}
+.sale_box.month_time_::after {
+  color: #ffe3fc;
+  font-size: 12px;
+  content: "Most Popular";
+  position: absolute;
+  top: -7px;
+  right: -60px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #c45c78;
+  transform: rotate(45deg);
 }
 .life_time h3:after {
   content: "$1499";
@@ -1306,7 +1324,7 @@ input[type="file"] {
   position: relative;
   width: 100vw;
   min-height: 1300px;
-  max-height: 1600px;
+  max-height: 1700px;
 }
 .profile_user {
   padding: 30px;
@@ -1353,6 +1371,7 @@ input[type="file"] {
   min-height: 200px;
   max-height: 800px;
   overflow-y: scroll;
+  margin-bottom: 120px;
 }
 .pro_h4 {
   font-size: 1.3125rem;
@@ -1417,12 +1436,14 @@ input[type="file"] {
   font-weight: 800;
 }
 .pro_approved_div {
-  padding: 30px;
+  padding-bottom: 20px;
   border-bottom: 1px solid black;
 }
 .pro_btn.submit {
+  border-radius: unset;
+  color: #e0b8d7;
   float: unset;
-  background-color: #85ff9d;
+  background-color: #2e303d;
   width: fit-content;
   position: relative;
   left: 50%;
@@ -1430,7 +1451,9 @@ input[type="file"] {
   margin-top: 20px;
 }
 .pro_approved_div p {
-  max-width: 30%;
+  color: #6b585c;
+  max-width: 45%;
+  font-size: 25px;
   min-width: 350px;
   left: 50%;
   transform: translateX(-50%);
@@ -1452,7 +1475,6 @@ input[type="file"] {
 .pro_footer {
   position: absolute;
   bottom: 0;
-  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1529,7 +1551,7 @@ input[type="file"] {
   }
   .profile_container {
     height: unset;
-    max-height: 1500px;
+    max-height: 1650px;
   }
 }
 

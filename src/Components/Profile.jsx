@@ -94,7 +94,7 @@ class Profile extends Component {
               <label>@{user.name}</label>
               <label>Member Since No Boby Cares</label>
             </div>
-            {true ? (
+            {user.approved ? (
               <div className="pro_approved">
                 Approved
                 <FontAwesomeIcon
@@ -109,12 +109,13 @@ class Profile extends Component {
           <div onClick={this.updateUser} className="pro_btn update">
             {loading ? <RingLoader color="black" size="40px" /> : "Update User"}
           </div>
-          {user.approved && (
+          {!user.approved && (
             <div className="pro_approved_div">
-              <p>
+              <p >
                 To grant fully access to all features on this website, you have
-                to input two of your favorite porn links in below and it will be
-                verify by web developer. Pardon 24 hours after submitting.
+                to contribute two quality porns found in any website. Input
+                links below and it will be verify by administrator. Pardon 24
+                hours after submitting.
               </p>
               <input /> <input />
               <div className="pro_btn submit">Submit</div>

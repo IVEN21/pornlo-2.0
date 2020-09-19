@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated, config, useSpring } from "react-spring";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { RingLoader } from "react-spinners";
 import {
   faCocktail,
   faTired,
@@ -10,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Waypoint } from "react-waypoint";
 import { localClipSave, localClipfetch } from "../BackendServices/authService";
-import { Route, Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 function Clips({ clip, user }) {
   const [index, set] = useState(0);
@@ -82,6 +81,14 @@ function Clips({ clip, user }) {
     config: config.gentle,
     transform: info_on ? "translate3d(0,0,0)" : "translate3d(400px,0,0)",
   });
+  const link_access = () => {
+    if (!user) return "/login";
+    if (user && user.approved) return clip.url;
+    else {
+      return "#";
+    }
+  };
+
   const info_render = () => (
     <animated.div className="clip_info" style={info_animation}>
       <div className="clip_info_bottom">
@@ -97,7 +104,16 @@ function Clips({ clip, user }) {
           </span>
         ))}
       </div>
-      <a href={user ? clip.url : "/login"} alt="#" className="clip_link">
+      <a
+        href={link_access()}
+        onClick={
+          user && user.approved
+            ? () => null
+            : () => toast.error("You must get approved")
+        }
+        alt="#"
+        className="clip_link"
+      >
         Link here
         <FontAwesomeIcon
           icon={faTired}
