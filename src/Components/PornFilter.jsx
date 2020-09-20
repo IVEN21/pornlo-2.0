@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { Route } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGrinSquintTears } from "@fortawesome/free-solid-svg-icons";
+import { getCurrrentUser } from "../BackendServices/authService";
 class PornFilter extends Component {
   state = {
     porns: [],
@@ -67,7 +68,7 @@ class PornFilter extends Component {
                 {...props}
                 porns={porns}
                 pageSize={pageSize}
-                user={this.props.user}
+                user={getCurrrentUser()}
                 onPage={this.onPage}
               />
             )}

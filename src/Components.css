@@ -380,7 +380,7 @@ a {
 }
 .clip_info_bottom span {
   font-size: 16px;
-  color: #ebeffc;
+  color: white;
   font-weight: 300;
 }
 
@@ -405,7 +405,7 @@ a {
   position: absolute;
   right: 2%;
   bottom: 4%;
-  color: #dbcfc5;
+  color: pink;
   border: 2px solid #e8d1e2;
   border-radius: 30px;
   font-size: 18px;
@@ -1430,7 +1430,6 @@ input[type="file"] {
 .pro_btn {
   padding: 5px 8px;
   float: right;
-  cursor: pointer;
   border-radius: 10px;
 }
 .pro_approved {
@@ -1440,13 +1439,15 @@ input[type="file"] {
 }
 .pro_approved_div {
   padding-bottom: 20px;
-  border-bottom: 1px solid black;
+
 }
+
 .pro_btn.submit {
+  display: block;
   border-radius: unset;
-  color: #e0b8d7;
+  border: 1px solid #2e303d;
   float: unset;
-  background-color: #2e303d;
+  background-color: #d4c8be;
   width: fit-content;
   position: relative;
   left: 50%;
@@ -1463,6 +1464,7 @@ input[type="file"] {
   position: relative;
 }
 .pro_btn.update {
+  cursor: pointer;
   margin: 30px 0;
   width: fit-content;
   float: unset;

@@ -12,7 +12,7 @@ import http from "../BackendServices/http";
 import { RingLoader } from "react-spinners";
 import { toast } from "react-toastify";
 import { apiEndpoint } from "../BackendServices/config.json";
-function LikeClips({ clip, like }) {
+function LikeClips({ clip, like, user }) {
   const [info, setInfo] = useState(false);
   const [heart, setHeart] = useState(true);
   const [delete_, setDelete_] = useState(false);
@@ -103,9 +103,11 @@ function LikeClips({ clip, like }) {
         ></img>
 
         {heart_render(clip._id)}
-        <a href={clip.url} style={{ color: "#241526" }}>
-          <FontAwesomeIcon icon={faPaperclip} className={"clip_heart link"} />
-        </a>
+        {user.approved && (
+          <a href={clip.url} style={{ color: "#241526" }}>
+            <FontAwesomeIcon icon={faPaperclip} className={"clip_heart link"} />
+          </a>
+        )}
 
         {info && (
           <div className="pro_like_info">

@@ -96,7 +96,7 @@ function Premium(props) {
           alt=""
         />
         <div className="pre_top_right">
-          <label>Quality Porns Only</label>
+          <label>Sofecore Porns Only</label>
           <p>
             Maybe you should stop jumping across multiple pornsites and wasting
             time searching that one porn

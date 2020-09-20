@@ -41,19 +41,26 @@ export async function refreshUser(userID) {
     localStorage.setItem(key, JSON.stringify(data));
     localStorage.setItem(key2, JSON.stringify(data.likes));
     localStorage.setItem(key3, JSON.stringify(data.uploads));
-    toast.success("Everything up to data ");
   } catch (err) {
     toast.error("Server Down :( ");
   }
 }
-export async function userLike(userID, clips) {
+export async function fetchdata(userID) {
+  const { data } = await http.get(
+    "http://localhost:5000" + "/_users/" + userID
+  );
+  localStorage.setItem(key, JSON.stringify(data));
+
+}
+export async function userLike(userID, clips, awaiting) {
+ 
   try {
-    await http.patch(apiEndpoint + "/_users/" + userID, {
+    await http.patch("http://localhost:5000" + "/_users/" + userID, {
       userID: userID,
       likes: clips.likes,
       uploads: clips.uploads,
+      awaiting: awaiting && awaiting,
     });
-   
   } catch (error) {}
 }
 
@@ -101,6 +108,19 @@ export function localUploadSave(clipID) {
     localStorage.setItem(key3, clips);
   } else {
     localStorage.setItem(key3, JSON.stringify([clipID]));
+  }
+}
+
+export async function send_approved_request(userid, link_1, link_2) {
+  try {
+    await http.post("http://localhost:5000/approve_request", {
+      userId: userid,
+      link_1,
+      link_2,
+    });
+    toast.success("Request Sent to Server");
+  } catch (error) {
+    toast.error("Approve Request Cannot be Sent");
   }
 }
 

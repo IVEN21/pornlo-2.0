@@ -8,8 +8,12 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { Waypoint } from "react-waypoint";
-import { localClipSave, localClipfetch } from "../BackendServices/authService";
-import { toast, ToastContainer } from "react-toastify";
+import {
+  localClipSave,
+  localClipfetch,
+  getCurrrentUser,
+} from "../BackendServices/authService";
+import { toast } from "react-toastify";
 
 function Clips({ clip, user }) {
   const [index, set] = useState(0);
@@ -83,7 +87,7 @@ function Clips({ clip, user }) {
   });
   const link_access = () => {
     if (!user) return "/login";
-    if (user && user.approved) return clip.url;
+    if (getCurrrentUser() && getCurrrentUser().approved) return clip.url;
     else {
       return "#";
     }
@@ -107,7 +111,7 @@ function Clips({ clip, user }) {
       <a
         href={link_access()}
         onClick={
-          user && user.approved
+          getCurrrentUser() && getCurrrentUser().approved
             ? () => null
             : () => toast.error("You must get approved")
         }
