@@ -53,7 +53,6 @@ function Sidebar({ onSide, user, menuClose }) {
       ...side_items_1,
       { name: "Login", id: 2, path: "/login" },
       ...side_items_2,
-      { name: "API", id: 7, path: "/API" },
     ];
   else side_items = [...side_items_1, ...side_items_2];
 
