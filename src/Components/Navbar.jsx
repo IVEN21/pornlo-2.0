@@ -31,7 +31,7 @@ function Navbar({ user, toggleMenu }) {
   };
   const clickSearch = (e) => {
     if (e.key === "Enter") {
-      window.location = window.location = `/porns/${query.trim()}/1`;
+      window.location = window.location = `/porns/${query.toLowerCase().trim()}/1`;
     }
   };
   const search_bar = (
@@ -68,7 +68,7 @@ function Navbar({ user, toggleMenu }) {
         className={user && user.admin ? "nav_item" : "nav_item disabled"}
         to={user && user.admin ? "/api" : "/WhatAreYouTryingToDo???"}
       >
-        API 
+        API
       </NavLink>
     </div>
   );
