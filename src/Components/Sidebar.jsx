@@ -46,7 +46,6 @@ function Sidebar({ onSide, user, menuClose }) {
       ...side_items_1,
       { name: `${user.name}`, id: 2, path: `/profile/${user.name}` },
       ...side_items_2,
-      { name: "API", id: 7, path: "/API" },
       { name: "Logout", id: 8, path: "/logout" },
     ];
   else if (width <= 750)
