@@ -810,10 +810,10 @@ button.focus {
     background: -webkit-linear-gradient(#b1b2f2, #e887d6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(35px);
+    font-size: 28px;
   }
   .pre_top_right p {
-    font-size: calc(1vw + 10px);
+    font-size: calc(1vw + 12px);
   }
   .pre_top_right span {
     position: absolute;
@@ -1439,7 +1439,6 @@ input[type="file"] {
 }
 .pro_approved_div {
   padding-bottom: 20px;
-
 }
 
 .pro_btn.submit {
@@ -1544,7 +1543,7 @@ input[type="file"] {
   .pro_likes {
     margin-bottom: 20px;
     margin-left: 10px;
-    width: 370px;
+    max-width: 370px;
     height: 200px;
     box-shadow: unset;
   }
