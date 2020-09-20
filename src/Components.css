@@ -422,7 +422,7 @@ a {
   font-size: 23px;
 }
 .pagination {
-  right: 10px;
+  right: 20px;
   justify-content: right;
   display: flex;
   position: absolute;
