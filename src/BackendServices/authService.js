@@ -46,16 +46,12 @@ export async function refreshUser(userID) {
   }
 }
 export async function fetchdata(userID) {
-  const { data } = await http.get(
-    "http://localhost:5000" + "/_users/" + userID
-  );
+  const { data } = await http.get(apiEndpoint + "/_users/" + userID);
   localStorage.setItem(key, JSON.stringify(data));
-
 }
 export async function userLike(userID, clips, awaiting) {
- 
   try {
-    await http.patch("http://localhost:5000" + "/_users/" + userID, {
+    await http.patch(apiEndpoint + "/_users/" + userID, {
       userID: userID,
       likes: clips.likes,
       uploads: clips.uploads,
@@ -113,7 +109,7 @@ export function localUploadSave(clipID) {
 
 export async function send_approved_request(userid, link_1, link_2) {
   try {
-    await http.post("http://localhost:5000/approve_request", {
+    await http.post(apiEndpoint + "/approve_request", {
       userId: userid,
       link_1,
       link_2,
