@@ -80,10 +80,13 @@ class Profile extends Component {
             ((props) => (
               <animated.div className="pro_approved_div" style={props}>
                 <p>
-                  To grant fully access to all features on this website, you
-                  have to contribute two quality porns found in any website.
-                  Input links below and it will be verify by administrators.
-                  Pardon 24 hours after submitting.
+                  <span style={{ color: "#bd8f9a", fontWeight: "700" }}>
+                    {" "}
+                    Please share two porns with us!
+                  </span>{" "}
+                  Input any two porn links below will grant you full access of
+                  this website. The links will be verifed and pardon 12 hours
+                  after submitting.
                 </p>
                 {this.link_upload("link_1")}
                 {this.link_upload("link_2")}

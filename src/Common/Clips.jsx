@@ -117,7 +117,7 @@ function Clips({ clip, user }) {
         }
         alt="#"
         className="clip_link"
-        target="_blank"
+        target={getCurrrentUser() && "_blank"}
       >
         Link here
         <FontAwesomeIcon
