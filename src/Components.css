@@ -321,7 +321,7 @@ a {
 
 .clip-container:hover {
   transform: translateY(-10px);
-  box-shadow: 0rem 0.5rem 1.2rem #ffd1f3;
+  box-shadow: 0rem 0.5rem 1.2rem#766b80;
 }
 
 .clip {
@@ -348,18 +348,22 @@ a {
 }
 
 .cocktail {
-  color: antiquewhite;
-  padding: 0px 3px;
+  border-radius: 50%;
+  background-color: rgba(214, 179, 176, 0.3);
+  width: 70px;
+  height: 70px;
+  color: #edbbd1;
+  padding: 15px 17px 0px 0px;
   position: absolute;
-  right: 20px;
-  bottom: 50%;
+  right: -30px;
+  bottom: 35%;
   font-size: 26px;
   cursor: pointer;
   z-index: 50;
   transition: all 250ms ease;
 }
 .cocktail:hover {
-  color: #80656f;
+  color: antiquewhite;
   transform: rotate(-35deg) scale(1.2);
 }
 .clip_info {
