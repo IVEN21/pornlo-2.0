@@ -104,7 +104,7 @@ function LikeClips({ clip, like, user }) {
 
         {heart_render(clip._id)}
         {user.approved && (
-          <a href={clip.url} style={{ color: "#241526" }}>
+          <a href={clip.url} style={{ color: "#241526" }} target="_blank">
             <FontAwesomeIcon icon={faPaperclip} className={"clip_heart link"} />
           </a>
         )}
