@@ -87,10 +87,7 @@ function Clips({ clip, user }) {
   });
   const link_access = () => {
     if (!user) return "/login";
-    if (getCurrrentUser() && getCurrrentUser().approved) return clip.url;
-    else {
-      return "#";
-    }
+    return clip.url;
   };
 
   const info_render = () => (
@@ -110,11 +107,6 @@ function Clips({ clip, user }) {
       </div>
       <a
         href={link_access()}
-        onClick={
-          getCurrrentUser() && getCurrrentUser().approved
-            ? () => null
-            : () => toast.error("You must get approved")
-        }
         alt="#"
         className="clip_link"
         target={getCurrrentUser() && getCurrrentUser().approved && "_blank"}

@@ -84,9 +84,7 @@ class Profile extends Component {
                     {" "}
                     Please share two porns with us!
                   </span>{" "}
-                  Input any two porn links below will grant you full access of
-                  this website. The links will be verifed and pardon 12 hours
-                  after submitting.
+                  Input any two porn links below :)
                 </p>
                 {this.link_upload("link_1")}
                 {this.link_upload("link_2")}
@@ -96,7 +94,7 @@ class Profile extends Component {
                   onClick={this.link_submit}
                   disabled={this.validation()}
                 >
-                  Submit
+                  Share
                 </button>
               </animated.div>
             ))
@@ -146,24 +144,15 @@ class Profile extends Component {
 
   //approve redner
   approved_render = () => {
-    const { user } = this.props;
-    if (this.state.await)
-      return (
-        <div className="pro_approved" style={{ color: "#DFC7C1" }}>
-          Awaiting Result ...
-        </div>
-      );
-    else if (getCurrrentUser().approved)
-      return (
-        <div className="pro_approved">
-          Approved
-          <FontAwesomeIcon
-            icon={faCheck}
-            style={{ color: "#85ff9d", marginLeft: "5px" }}
-          />
-        </div>
-      );
-    else return <div className="pro_approved">Not Approved Yet</div>;
+    return (
+      <div className="pro_approved">
+        Approved
+        <FontAwesomeIcon
+          icon={faCheck}
+          style={{ color: "#85ff9d", marginLeft: "5px" }}
+        />
+      </div>
+    );
   };
 
   //disabled btn

@@ -114,9 +114,9 @@ export async function send_approved_request(userid, link_1, link_2) {
       link_1,
       link_2,
     });
-    toast.success("Request Sent to Server");
+    toast.success("Thank You For Sharing!");
   } catch (error) {
-    toast.error("Approve Request Cannot be Sent");
+    toast.error("You May Not Share At This Time But Thank You!");
   }
 }
 
