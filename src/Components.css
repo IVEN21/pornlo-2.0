@@ -321,7 +321,7 @@ a {
 
 .clip-container:hover {
   transform: translateY(-10px);
-  box-shadow: 0rem 0.5rem 1.2rem#766b80;
+  box-shadow: 0rem 0.7rem 1.2rem#766b80;
 }
 
 .clip {

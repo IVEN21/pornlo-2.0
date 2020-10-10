@@ -26,7 +26,7 @@ class Profile extends Component {
     link_2: "",
     await: getCurrrentUser().await,
   };
-
+ 
   //update likes and uploads to databse
   updateClips = async () => {
     const localLikes = JSON.parse(localClipfetch());
@@ -196,7 +196,7 @@ class Profile extends Component {
   render() {
     const { user } = this.props;
     const { likesClips, uploadClips, loading } = this.state;
-
+    
     return (
       <div className="profile comp">
         <ToastContainer />
