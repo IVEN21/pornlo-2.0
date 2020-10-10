@@ -114,7 +114,7 @@ function Sidebar({ onSide, user, menuClose }) {
   //categories item animation
   const [on_cate, toggleCate] = useState(false);
   const categories = [
-    { name: "~ Japaness", id: 100, path: "/porns/japanese/1" },
+    { name: "~ Japanese", id: 100, path: "/porns/japanese/1" },
     { name: "~ Blonde", id: 101, path: "/porns/blonde/1" },
     { name: "~ Teen", id: 102, path: "/porns/teen/1" },
     { name: "~ Masturbation", id: 103, path: "/porns/masturbation/1" },
