@@ -29,9 +29,13 @@ class PornFilter extends Component {
       const filter = this.props.match.params.filter;
       var tempPorns = [];
       for (var i = 0; i < porns.length; i++) {
+        loop:
         for (var j = 0; j < porns[i].attrs.length; j++) {
-          if (porns[i].attrs[j].attr.toLowerCase().includes(filter.trim()))
+          if (porns[i].attrs[j].attr.toLowerCase().includes(filter.trim())) {
             tempPorns.push(porns[i]);
+            break loop
+          }
+
         }
       }
       this.setState({ porns: tempPorns.reverse() });

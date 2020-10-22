@@ -15,14 +15,14 @@ function saleBox(h4, span, h3, p, btn, classname) {
       {classname !== "month_time_" ? (
         <button>{btn}</button>
       ) : (
-        <NavLink to="/signup">
-          <button
-            style={{ textDecoration: "underline", border: "1px solid pink" }}
-          >
-            {btn}{" "}
-          </button>
-        </NavLink>
-      )}
+          <NavLink to="/signup">
+            <button
+              style={{ textDecoration: "underline", border: "1px solid pink" }}
+            >
+              {btn}{" "}
+            </button>
+          </NavLink>
+        )}
     </div>
   );
 }
@@ -34,7 +34,7 @@ function botComp() {
       {saleBox(
         "Life Time Acess",
         "Own it forever!",
-        "$0.85",
+        "$-0.85",
         "Limited time at this price",
         "Buy Now",
         "life_time"
@@ -42,16 +42,16 @@ function botComp() {
       {saleBox(
         "Monthly Menbership",
         "All access, low price",
-        "$2.68/Mon",
-        "Cancel Anytime",
+        "$0.035/Mon",
+        "Cancel anytime",
         "Subscribe now",
         "month_time"
       )}{" "}
       {saleBox(
-        "Premium Free",
-        "Try free for 30 days",
+        "Watching Free",
+        "Just Create Acc lol",
         "FREE",
-        "-",
+        "Come on dude",
         "Create Account",
         "month_time_"
       )}
@@ -95,8 +95,9 @@ function Premium(props) {
           className="pre_top_img"
           alt=""
         />
+        <a href="https://dribbble.com/shots/5866597-2018" target="_blank" style={{ color: "white", fontSize: "20px", margin: "0 0 0 5px" }}> - Img Credit</a>
         <div className="pre_top_right">
-          <label>Sofecore Porns Only</label>
+          <label>Who Doesn't Like StepSis?</label>
           <p>
             Maybe you should stop jumping across multiple pornsites and wasting
             time searching that one porn
@@ -156,9 +157,9 @@ function Premium(props) {
             <h3>A wise man once said</h3>
             <p>
               "I never had been so much pleasure after I found this pornsite. I
-              cum myslef everytime two minutes after watching"
+             always cum myslef too quick after watching"
             </p>
-            <p>Photo by Chu, Business Manager </p>
+            <p>Photo by Chu, fake accounting manager </p>
           </div>
         </animated.div>
       </div>
