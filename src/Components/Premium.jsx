@@ -97,7 +97,7 @@ function Premium(props) {
         />
         <a href="https://dribbble.com/shots/5866597-2018" target="_blank" style={{ color: "white", fontSize: "20px", margin: "0 0 0 5px" }}> - Img Credit</a>
         <div className="pre_top_right">
-          <label>Who Doesn't Like StepSis?</label>
+          <label>Oh yea, stepSis?</label>
           <p>
             Maybe you should stop jumping across multiple pornsites and wasting
             time searching that one porn
