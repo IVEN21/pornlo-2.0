@@ -13,7 +13,7 @@ function saleBox(h4, span, h3, p, btn, classname) {
       <h3>{h3}</h3>
       <p>{p}</p>
       {classname !== "month_time_" ? (
-        <button>{btn}</button>
+        <button disabled>{btn}</button>
       ) : (
           <NavLink to="/signup">
             <button
@@ -62,17 +62,8 @@ function botComp() {
 function footerComp() {
   return (
     <div className="prem_footer">
-      <label>Terms</label>
-      <label>Condition</label>
-      <label>About</label>
-      <label
-        style={{ color: "pink", cursor: "pointer" }}
-        onClick={() =>
-          (window.location = "https://www.instagram.com/_yesloiven__/")
-        }
-      >
-        AddMe
-      </label>
+      <label>Credit/copyright:<a href="https://www.pornhub.com" target="_blank"> pornhub.com</a>
+        <a target="_blank" href="https://www5.javmost.com/">javmost.com</a></label>
     </div>
   );
 }
@@ -157,7 +148,7 @@ function Premium(props) {
             <h3>A wise man once said</h3>
             <p>
               "I never had been so much pleasure after I found this pornsite. I
-             always cum myslef too quick after watching"
+              always cum myslef too quick after watching"
             </p>
             <p>Photo by Chu, fake accounting manager </p>
           </div>

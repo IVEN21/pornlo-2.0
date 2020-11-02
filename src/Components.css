@@ -861,12 +861,11 @@ button.focus {
 .prem_footer label {
   padding-left: 50px;
 }
-.prem_footer label:hover {
-  color: pink;
-}
+
 .prem_footer a {
+  text-decoration: underline;
   color: black;
-  padding: 30px;
+  padding: 20px;
 }
 .prem_footer a:hover {
   color: pink;
