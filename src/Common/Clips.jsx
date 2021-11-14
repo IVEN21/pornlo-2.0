@@ -70,8 +70,9 @@ function Clips({ clip, user }) {
       );
     }
   };
+
   const clip_transitions = useTransition(
-    clip.clips[index],
+    clip.clip_images[index],
     (item) => item._id,
     {
       from: { opacity: 0, transform: "scale(1.1)" },
@@ -87,21 +88,21 @@ function Clips({ clip, user }) {
   });
   const link_access = () => {
     if (!user) return "/login";
-    return clip.url;
+    return clip.clip_url;
   };
 
   const info_render = () => (
     <animated.div className="clip_info" style={info_animation}>
       <div className="clip_info_bottom">
-        {clip.attrs.map((attrs) => (
+        {clip.clip_tags.map((attrs, index) => (
           <span
             className="clip_attr"
             key={attrs._id}
             onClick={() =>
-              (window.location = `/porns/${attrs.attr.toLowerCase()}/1`)
+              (window.location = `/porns/${attrs.toLowerCase()}/1`)
             }
           >
-            {attrs.attr}
+            {attrs}
           </span>
         ))}
       </div>
@@ -134,7 +135,7 @@ function Clips({ clip, user }) {
           <animated.div
             key={key}
             className="clip"
-            style={{ ...props, backgroundImage: `url(${item.url})` }}
+            style={{ ...props, backgroundImage: `url(${item})` }}
             onMouseOver={() => clip_toggle(true)}
             onMouseLeave={() => clip_toggle(false)}
             onClick={() => set((index + 1) % 3)}

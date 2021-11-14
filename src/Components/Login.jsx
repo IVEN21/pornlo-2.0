@@ -85,6 +85,7 @@ class Login extends Component {
         <button disabled={this.validation()} onClick={this.onLogin}>
           Login
         </button>
+
         <p>
           Don't have a account ? Click{" "}
           <NavLink to="/signup" className="regi_link" style={{ color: "pink" }}>

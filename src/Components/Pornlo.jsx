@@ -21,8 +21,10 @@ class Pornlo extends Component {
     window.scrollTo(0, 0);
 
     this.setState({ loading: true });
+
     try {
       const porns = await getPorns();
+
       this.setState({ porns: porns.reverse() });
     } catch (error) {
       toast.error("Server Down :( ");
@@ -62,7 +64,7 @@ class Pornlo extends Component {
                 filter={false}
                 loading={loading}
                 {...props}
-                porns={porns}
+                porns={porns.length > 0 && porns[2].clips}
                 pageSize={pageSize}
                 user={this.props.user}
                 onPage={this.onPage}

@@ -14,7 +14,6 @@ function Clipsdiaplay({
   filter,
   routepage,
 }) {
-
   //render loader
   const loder = () => (
     <div className="loader">

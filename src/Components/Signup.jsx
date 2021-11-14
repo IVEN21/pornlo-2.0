@@ -16,7 +16,7 @@ class Signup extends Component {
 
   //scroll top
   componentDidMount() {
-    window.scroll(0,0);
+    window.scroll(0, 0);
   }
 
   //update state
