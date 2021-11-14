@@ -64,7 +64,7 @@ class Pornlo extends Component {
                 filter={false}
                 loading={loading}
                 {...props}
-                porns={porns.length > 0 && porns[2].clips}
+                porns={porns}
                 pageSize={pageSize}
                 user={this.props.user}
                 onPage={this.onPage}
